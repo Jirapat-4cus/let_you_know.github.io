@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>START STUDY - Login</title>
+    <link rel="stylesheet" href="loginstyles.css">
+</head>
+<body>
+    <div class="bg-decoration"></div>
+    <div class="bg-decoration"></div>
+    <div class="bg-decoration"></div>
+
+    <h1>REGISTER</h1>
+    
+    <div class="container">
+        <form id="loginForm">
+            <div class="form-group">
+                <input type="text" id="name" placeholder="NAME" required>
+            </div>
+            
+           <div class="form-group">
+                <input type="text" id="username" placeholder="USERNAME" required>
+            </div>
+
+            <div class="form-group">
+                <input type="password" id="password" placeholder="PASSWORD" required>
+            </div>
+
+            <div class="form-group">
+                <input type="password" id="confirmpassword" placeholder="CONFIRM PASSWORD" required>
+            </div>
+            
+            <button type="submit" class="btn btn-login">CONFIRM</button>
+            
+            <div class="error-message" id="errorMessage"></div>
+            <div class="success-message" id="successMessage"></div>
+            <div class="loading" id="loadingMessage">
+                <div class="spinner"></div>
+                กำลังเข้าสู่ระบบ...
+            </div>
+        </form>
+    </div>
+
+    <script src="loginjava.js"></script>
+</body>
+</html>
