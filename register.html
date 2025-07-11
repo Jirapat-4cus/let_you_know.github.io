@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>START STUDY - Login</title>
+    <title>START STUDY - Register</title>
     <link rel="stylesheet" href="loginstyles.css">
 </head>
 <body>
@@ -14,34 +14,40 @@
     <h1>REGISTER</h1>
     
     <div class="container">
-        <form id="loginForm">
+        <form id="registerForm">
             <div class="form-group">
-                <input type="text" id="name" placeholder="NAME" required>
+                <input type="text" id="username" placeholder="USERNAME" required>
             </div>
             
-           <div class="form-group">
-                <input type="text" id="username" placeholder="USERNAME" required>
+            <div class="form-group">
+                <input type="email" id="email" placeholder="EMAIL" required>
             </div>
 
             <div class="form-group">
                 <input type="password" id="password" placeholder="PASSWORD" required>
+                <div class="password-strength" id="passwordStrength"></div>
             </div>
 
             <div class="form-group">
-                <input type="password" id="confirmpassword" placeholder="CONFIRM PASSWORD" required>
+                <input type="password" id="confirmPassword" placeholder="CONFIRM PASSWORD" required>
+                <div class="password-match" id="passwordMatch"></div>
             </div>
             
-            <button type="submit" class="btn btn-login">CONFIRM</button>
+            <button type="submit" class="btn btn-login">REGISTER</button>
             
             <div class="error-message" id="errorMessage"></div>
             <div class="success-message" id="successMessage"></div>
             <div class="loading" id="loadingMessage">
                 <div class="spinner"></div>
-                กำลังเข้าสู่ระบบ...
+                กำลังสมัครสมาชิก...
             </div>
         </form>
+        
+        <div class="back-to-login">
+            <a href="#" onclick="goToLogin()">← กลับไปหน้า LOGIN</a>
+        </div>
     </div>
 
-    <script src="loginjava.js"></script>
+    <script src="register.js"></script>
 </body>
 </html>
