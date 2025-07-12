@@ -4,21 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>START STUDY - Profile</title>
-    <link rel="stylesheet" href="profilestyle.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="header">
         <div class="header-left">
-            <div class="hamburger" href="#">☰</div>
-            <div class="hamburger" href="#"> START STUDY </div>
-            <div class="hamburger">|</div>
-            <div class="hamburger" href="#"> 📅</div>
+            <div class="hamburger">☰ START STUDY | 📅</div>
         </div>
         <div class="user-info">
             <div class="user-avatar" id="navbarAvatar">
                 <div class="user-avatar-placeholder">👤</div>
             </div>
-            <span id="navbarUsername">Username</span>
+            <span id="navbarUsername">I love fried Chicken</span>
         </div>
     </header>
 
@@ -28,11 +25,12 @@
                 <div class="profile-image" onclick="triggerFileUpload()">
                     <div class="profile-image-placeholder">👤</div>
                     <div class="upload-overlay">📷 เปลี่ยนรูป</div>
+                    <div class="level-badge">lv.999</div>
                 </div>
                 <input type="file" id="profileImageInput" class="file-input" accept="image/*" onchange="loadProfileImage(event)">
                 <div class="profile-info">
-                    <h1 class="editable" data-field="name">Username</h1>
-                    <p class="editable" data-field="description">description</p>
+                    <h1 class="editable" data-field="name">Mr. I love fried Chicken</h1>
+                    <p class="editable" data-field="description">I love fried Chicken and everything before 12</p>
                 </div>
                 <div class="edit-icon" onclick="toggleEditMode()">✏️</div>
             </div>
@@ -41,13 +39,17 @@
         <div class="content-grid">
             <div class="achievements">
                 <h2>ผลงาน :</h2>
+                <div class="achievement-item editable" data-field="achievement">สอวน.การศาสตร์ค่าย5</div>
+                <div class="achievement-item editable" data-field="achievement">ผู้แทนวิทวอา</div>
+                <div class="achievement-item editable" data-field="achievement">สร้างดาว kappa-2978b</div>
+                <div class="achievement-item editable" data-field="achievement">คิดสมการ k=fc²</div>
                 <div class="add-achievement" id="addAchievementBtn" onclick="addNewAchievement()" style="display: none;">+ เพิ่มผลงานใหม่</div>
             </div>
 
             <div class="gallery">
-                <h2>ย้อนหลัง :</h2>
+                <h2>ย้อนหลัง : (แล้วแต่เจ้าของปัญญี)</h2>
                 <div class="image-grid" id="videoGrid">
-                    <div class="gallery-item add-video" onclick="triggerVideoUpload()">
+                    <div class="gallery-item add-video" id="addVideoBtn" onclick="triggerVideoUpload()" style="display: none;">
                         <div>📹</div>
                         <div>เพิ่มวีดิโอ</div>
                     </div>
@@ -57,6 +59,6 @@
         </div>
     </div>
 
-    <script src="profilescript.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

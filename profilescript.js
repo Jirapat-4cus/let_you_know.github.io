@@ -105,13 +105,15 @@ function toggleEditMode() {
     isEditMode = !isEditMode;
     const editables = document.querySelectorAll('.editable');
     const editIcon = document.querySelector('.edit-icon');
-    const addBtn = document.getElementById('addAchievementBtn');
+    const addAchievementBtn = document.getElementById('addAchievementBtn');
+    const addVideoBtn = document.getElementById('addVideoBtn');
     
     if (isEditMode) {
         // เข้าสู่โหมดแก้ไข
         editIcon.textContent = '💾';
         editIcon.title = 'บันทึก';
-        addBtn.style.display = 'block';
+        addAchievementBtn.style.display = 'block'; // แสดงปุ่มเพิ่มผลงาน
+        addVideoBtn.style.display = 'flex';        // แสดงปุ่มเพิ่มวีดิโอ
         
         editables.forEach(function(element) {
             element.classList.add('editing');
@@ -167,7 +169,8 @@ function toggleEditMode() {
         // ออกจากโหมดแก้ไข (บันทึก)
         editIcon.textContent = '✏️';
         editIcon.title = 'แก้ไข';
-        addBtn.style.display = 'none';
+        addAchievementBtn.style.display = 'none'; // ซ่อนปุ่มเพิ่มผลงาน
+        addVideoBtn.style.display = 'none';       // ซ่อนปุ่มเพิ่มวีดิโอ
         
         editables.forEach(function(element) {
             element.classList.remove('editing');
@@ -333,9 +336,13 @@ function loadVideos(event) {
             videoItem.appendChild(overlay);
             videoItem.appendChild(deleteBtn);
             
-            // เพิ่มก่อนปุ่ม "เพิ่มวีดิโอ"
+            // เพิ่มก่อนปุ่ม "เพิ่มวีดิโอ" (ถ้ามี)
             const addVideoBtn = videoGrid.querySelector('.add-video');
-            videoGrid.insertBefore(videoItem, addVideoBtn);
+            if (addVideoBtn) {
+                videoGrid.insertBefore(videoItem, addVideoBtn);
+            } else {
+                videoGrid.appendChild(videoItem);
+            }
         }
     }
     
