@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>START STUDY - Profile</title>
+    <link rel="stylesheet" href="profilestyle.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-left">
+            <div class="hamburger" href="#">☰</div>
+            <div class="hamburger" href="#"> START STUDY </div>
+            <div class="hamburger">|</div>
+            <div class="hamburger" href="#"> 📅</div>
+        </div>
+        <div class="user-info">
+            <div class="user-avatar" id="navbarAvatar">
+                <div class="user-avatar-placeholder">👤</div>
+            </div>
+            <span id="navbarUsername">Username</span>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="profile-section">
+            <div class="profile-header">
+                <div class="profile-image" onclick="triggerFileUpload()">
+                    <div class="profile-image-placeholder">👤</div>
+                    <div class="upload-overlay">📷 เปลี่ยนรูป</div>
+                </div>
+                <input type="file" id="profileImageInput" class="file-input" accept="image/*" onchange="loadProfileImage(event)">
+                <div class="profile-info">
+                    <h1 class="editable" data-field="name">Username</h1>
+                    <p class="editable" data-field="description">description</p>
+                </div>
+                <div class="edit-icon" onclick="toggleEditMode()">✏️</div>
+            </div>
+        </div>
+
+        <div class="content-grid">
+            <div class="achievements">
+                <h2>ผลงาน :</h2>
+                <div class="add-achievement" id="addAchievementBtn" onclick="addNewAchievement()" style="display: none;">+ เพิ่มผลงานใหม่</div>
+            </div>
+
+            <div class="gallery">
+                <h2>ย้อนหลัง :</h2>
+                <div class="image-grid" id="videoGrid">
+                    <div class="gallery-item add-video" onclick="triggerVideoUpload()">
+                        <div>📹</div>
+                        <div>เพิ่มวีดิโอ</div>
+                    </div>
+                </div>
+                <input type="file" id="videoInput" class="video-input" accept="video/*" multiple onchange="loadVideos(event)">
+            </div>
+        </div>
+    </div>
+
+    <script src="profilescript.js"></script>
+</body>
+</html>
