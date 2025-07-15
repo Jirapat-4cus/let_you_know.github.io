@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TutorSpace - ติวเตอร์ออนไลน์</title>
+    <style>
+        /* ... (CSS ทั้งหมดของคุณเหมือนเดิม) ... */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .header { text-align: center; color: white; margin-bottom: 40px; }
+        .header h1 { font-size: 3em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .header p { font-size: 1.2em; opacity: 0.9; }
+        .main-content { display: grid; grid-template-columns: 1fr 2fr; gap: 30px; margin-bottom: 40px; }
+        .create-room-section, .rooms-section { background: white; border-radius: 20px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); height: fit-content; }
+        .section-title { font-size: 1.8em; margin-bottom: 20px; color: #4a5568; border-bottom: 3px solid #667eea; padding-bottom: 10px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: #4a5568; }
+        .form-group input, .form-group select { width: 100%; padding: 12px; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 16px; transition: border-color 0.3s ease; }
+        .form-group input:focus, .form-group select:focus { outline: none; border-color: #667eea; }
+        .btn { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 30px; border: none; border-radius: 25px; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; width: 100%; }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4); }
+        .btn-join { background: linear-gradient(135deg, #48bb78 0%, #38a169 100%); padding: 8px 20px; font-size: 14px; width: auto; }
+        .filter-section { margin-bottom: 20px; }
+        .filter-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
+        .filter-btn { padding: 8px 16px; border: 2px solid #e2e8f0; background: white; border-radius: 20px; cursor: pointer; transition: all 0.3s ease; font-size: 14px; }
+        .filter-btn.active { background: #667eea; color: white; border-color: #667eea; }
+        .rooms-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; max-height: 600px; overflow-y: auto; }
+        .room-card { background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 15px; padding: 20px; transition: all 0.3s ease; position: relative; }
+        .room-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); border-color: #667eea; }
+        .room-title { font-size: 1.4em; font-weight: 600; margin-bottom: 10px; color: #2d3748; }
+        .room-subject { display: inline-block; background: #667eea; color: white; padding: 4px 12px; border-radius: 15px; font-size: 12px; font-weight: 600; margin-bottom: 10px; }
+        .room-participants { color: #718096; font-size: 14px; margin-bottom: 15px; }
+        .room-status { position: absolute; top: 15px; right: 15px; width: 12px; height: 12px; background: #48bb78; border-radius: 50%; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.2); opacity: 0.7; } 100% { transform: scale(1); opacity: 1; } }
+        .no-rooms { text-align: center; color: #718096; font-size: 18px; margin-top: 40px; }
+        .meeting-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #1a1a1a; z-index: 1000; }
+        .meeting-container { width: 100%; height: 100%; display: flex; flex-direction: column; color: white; }
+        .meeting-header { background: #2d2d2d; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #404040; }
+        .meeting-title { font-size: 16px; font-weight: 500; }
+        .meeting-time { font-size: 14px; color: #9ca3af; }
+        .meeting-main { flex: 1; display: flex; position: relative; overflow: hidden; }
+        .video-grid { flex: 1; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 8px; padding: 10px; background: #1a1a1a; align-content: flex-start;}
+        .video-container { position: relative; background: #2d2d2d; border-radius: 12px; overflow: hidden; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; }
+        .video-container video { width: 100%; height: 100%; object-fit: cover; }
+        .video-placeholder { width: 80px; height: 80px; border-radius: 50%; background: #4285f4; display: flex; align-items: center; justify-content: center; font-size: 36px; color: white; font-weight: 600; }
+        .video-name { position: absolute; bottom: 12px; left: 12px; background: rgba(0,0,0,0.7); padding: 4px 8px; border-radius: 6px; font-size: 12px; color: white; }
+        .meeting-controls { background: #2d2d2d; padding: 20px; display: flex; justify-content: center; align-items: center; gap: 12px; border-top: 1px solid #404040; }
+        .control-btn { width: 48px; height: 48px; border-radius: 50%; border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s ease; font-size: 18px; color: white; }
+        .control-btn.active { background: #5f6368 !important; }
+        .control-btn.mic { background: #34a853; }
+        .control-btn.camera { background: #34a853; }
+        .control-btn.screen-share { background: #1a73e8; }
+        .control-btn.end-call { background: #ea4335; }
+        .control-btn:hover { transform: scale(1.1); }
+        .participants-count { position: absolute; top: 20px; right: 20px; background: rgba(0,0,0,0.7); padding: 8px 12px; border-radius: 20px; font-size: 14px; color: white; }
+        @media (max-width: 768px) { .main-content { grid-template-columns: 1fr; } .header h1 { font-size: 2em; } .rooms-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container" id="lobby">
+        <div class="header">
+            <h1>🎓 TutorSpace</h1>
+            <p>แพลตฟอร์มติวเตอร์ออนไลน์ แชร์ความรู้ เรียนรู้ร่วมกัน</p>
+        </div>
+        <div class="main-content">
+            <div class="create-room-section">
+                <h2 class="section-title">สร้างห้องเรียน</h2>
+                <form id="createRoomForm">
+                    <div class="form-group">
+                        <label for="roomName">ชื่อห้อง</label>
+                        <input type="text" id="roomName" placeholder="เช่น: ติวคณิต เรื่องแคลคูลัส" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="yourName">ชื่อของคุณ (ติวเตอร์/ผู้เรียน)</label>
+                        <input type="text" id="yourName" placeholder="ใส่ชื่อที่ต้องการให้แสดง" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">วิชา</label>
+                        <select id="subject" required>
+                            <option value="">เลือกวิชา</option>
+                            <option value="คณิตศาสตร์">คณิตศาสตร์</option>
+                            <option value="เคมี">เคมี</option>
+                            <option value="ชีววิทยา">ชีววิทยา</option>
+                            <option value="ฟิสิกส์">ฟิสิกส์</option>
+                            <option value="ภาษาอังกฤษ">ภาษาอังกฤษ</option>
+                            <option value="ภาษาไทย">ภาษาไทย</option>
+                            <option value="สังคมศึกษา">สังคมศึกษา</option>
+                            <option value="คอมพิวเตอร์">คอมพิวเตอร์</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn">🚀 สร้างห้องเรียน</button>
+                </form>
+            </div>
+            <div class="rooms-section">
+                <h2 class="section-title">ห้องเรียนที่เปิดอยู่</h2>
+                <div class="rooms-grid" id="roomsGrid">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="meeting-modal" id="meetingModal">
+        <div class="meeting-container">
+            <div class="meeting-header">
+                <div>
+                    <div class="meeting-title" id="meetingRoomTitle">...</div>
+                </div>
+                <div class="participants-count" id="participantsCount">👥 1 คน</div>
+            </div>
+            <div class="meeting-main">
+                <div class="video-grid" id="meetingVideoGrid">
+                    </div>
+            </div>
+            <div class="meeting-controls">
+                <button class="control-btn mic active" id="micBtn">🎤</button>
+                <button class="control-btn camera active" id="cameraBtn">📹</button>
+                <button class="control-btn screen-share" id="screenShareBtn">🖥️</button>
+                <button class="control-btn end-call" id="endCallBtn">📞</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-peer@9.11.1/simplepeer.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
