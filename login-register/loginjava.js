@@ -1,8 +1,6 @@
 // จำลองฐานข้อมูลผู้ใช้
 const users = [
-  { username: "admin", password: "admin123" },
-  { username: "student", password: "student123" },
-  { username: "teacher", password: "teacher123" },
+  { username: "admin", password: "123" },
 ];
 
 // รอให้ DOM โหลดเสร็จก่อน
@@ -39,11 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // จำลองการเปลี่ยนหน้า
         setTimeout(() => {
-          alert(
-            "ยินดีต้อนรับ " +
-              username +
-              "! \n\nในระบบจริงจะเปลี่ยนหน้าไปยังหน้าหลักของระบบ"
-          );
+          window.location.href = "index.html"
           // window.location.href = '/dashboard'; // ในระบบจริง
         }, 1500);
       } else {
@@ -70,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // ฟังก์ชัน register (จำลอง) - ประกาศเป็น global function
 function showRegisterForm() {
-  alert(
-    "ฟังก์ชัน Register\n\nในระบบจริงจะเปลี่ยนหน้าไปยังหน้าสมัครสมาชิก\n\nสำหรับทดสอบ Login ใช้:\n- admin / admin123\n- student / student123\n- teacher / teacher123"
-  );
+  window.location.href = "register.html";
 }
+
