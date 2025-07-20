@@ -14,17 +14,139 @@
     <li class="dropdown">
       <button class="dropbtn">Dropdown</button>
       <div class="dropdown-content">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
+        <a href="#">menu 4</a>
+        <a href="#">menu 5</a>
+        <a href="#">menu 6</a>
       </div>
     </li>
 
-    <li><a href="#">Home</a></li>
-    <li><a href="#">News</a></li>
-    <li><a href="#">Contact</a></li>
-    <li><a href="#">About</a></li>
+    <li><a href="#">menu 1</a></li>
+    <li><a href="#">menu 2</a></li>
+    <li><a href="#">menu 3</a></li>
+    <li><a href="#">menu 4</a></li>
+
+    <il><img src="DSCF7127.JPG" alt="profile" class="navprofile"></il>
   </ul>
 
+  <div class="carousel-container">
+
+        <button class="arrow arrow-left" onclick="prevSlide()">‹</button>
+        <button class="arrow arrow-right" onclick="nextSlide()">›</button>
+        
+        <div class="carousel" id="carousel">
+            <!-- Card 1: Web Development -->
+            <div class="card position-2" data-index="0">
+                <div class="card-header">
+                                       Engineer
+                </div>
+                <div class="card-body">
+                    <div class="card-title">Road to be Engineer</div>
+                    <div class="card-description">
+                        Learn about math and physics
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn btn-primary" onclick="handleAction('enroll', 0)">join Course</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Mobile App -->
+            <div class="card position-3" data-index="1">
+                <div class="card-header">
+                    course1
+                </div>
+                <div class="card-body">
+                    <div class="card-title">IDK</div>
+                    <div class="card-description">
+                        something about that course
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn btn-primary" onclick="handleAction('enroll', 1)">Join Course</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Data Science -->
+            <div class="card position-4" data-index="2">
+                <div class="card-header">
+                    course2
+                </div>
+                <div class="card-body">
+                    <div class="card-title">IDK</div>
+                    <div class="card-description">
+                        something about that course
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn btn-primary" onclick="handleAction('start', 2)">Join Course</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4: UI/UX Design -->
+            <div class="card position-0" data-index="3">
+                <div class="card-header">
+                    course3
+                </div>
+                <div class="card-body">
+                    <div class="card-title">IDK</div>
+                    <div class="card-description">
+                        something about that course
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn btn-primary" onclick="handleAction('register', 3)">Join Course</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5: DevOps -->
+            <div class="card position-1" data-index="4">
+                <div class="card-header">
+                    course4
+                </div>
+                <div class="card-body">
+                    <div class="card-title">DevOps & Cloud Computing</div>
+                    <div class="card-description">
+                        something about that course
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn btn-primary" onclick="handleAction('begin', 4)">Join Course</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6: Cybersecurity -->
+            <div class="card position-0" data-index="5">
+                <div class="card-header">
+                    course5
+                </div>
+                <div class="card-body">
+                    <div class="card-title">Cybersecurity Fundamentals</div>
+                    <div class="card-description">
+                        something about that course
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn btn-primary" onclick="handleAction('secure', 5)">Join Course</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 7: AI & Machine Learning -->
+            <div class="card position-0" data-index="6">
+                <div class="card-header">
+                    course6
+                </div>
+                <div class="card-body">
+                    <div class="card-title">AI & Machine Learning</div>
+                    <div class="card-description">
+                        something about that course
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn btn-primary" onclick="handleAction('explore', 6)">Join Course</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="coursejs.js"></script>
 </body>
 </html>
