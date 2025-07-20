@@ -3,29 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <title>title</title>
-  <link rel="stylesheet" href="mainstyles.css" />
+  <link rel="stylesheet" href="coursestyles.css" />
 </head>
 <body>
 
-  <!-- Navbar -->
   <ul class="navbar">
-    <li><img src="DSCF7127.JPG" alt="Logo" class="navlogo" /></li>
+    <!-- เมนูซ้าย -->
+    <div class="navbar-left">
+      <li><img src="DSCF7127.JPG" alt="Logo" class="navlogo" /></li>
 
-    <li class="dropdown">
-      <button class="dropbtn">Dropdown</button>
-      <div class="dropdown-content">
-        <a href="#">menu 4</a>
-        <a href="#">menu 5</a>
-        <a href="#">menu 6</a>
-      </div>
-    </li>
+      <li class="dropdown">
+        <button class="dropbtn">Dropdown</button>
+        <div class="dropdown-content">
+          <a href="#">menu 4</a>
+          <a href="#">menu 5</a>
+          <a href="#">menu 6</a>
+        </div>
+      </li>
 
-    <li><a href="#">menu 1</a></li>
-    <li><a href="#">menu 2</a></li>
-    <li><a href="#">menu 3</a></li>
-    <li><a href="#">menu 4</a></li>
+      <li><a href="#">menu 1</a></li>
+      <li><a href="#">menu 2</a></li>
+      <li><a href="#">menu 3</a></li>
+      <li><a href="#">menu 4</a></li>
+    </div>
 
-    <il><img src="DSCF7127.JPG" alt="profile" class="navprofile"></il>
+    <!-- Profile ขวาสุด -->
+    <div class="navbar-right">
+      <li><img src="DSCF7127.JPG" alt="profile" class="navprofile"></li>
+    </div>
   </ul>
 
   <div class="carousel-container">
@@ -34,10 +39,10 @@
         <button class="arrow arrow-right" onclick="nextSlide()">›</button>
         
         <div class="carousel" id="carousel">
-            <!-- Card 1: Web Development -->
+            <!-- Card 1: Engineer -->
             <div class="card position-2" data-index="0">
                 <div class="card-header">
-                                       Engineer
+                    Engineer
                 </div>
                 <div class="card-body">
                     <div class="card-title">Road to be Engineer</div>
@@ -50,7 +55,7 @@
                 </div>
             </div>
 
-            <!-- Card 2: Mobile App -->
+            <!-- Card 2: Course1 -->
             <div class="card position-3" data-index="1">
                 <div class="card-header">
                     course1
@@ -66,7 +71,7 @@
                 </div>
             </div>
 
-            <!-- Card 3: Data Science -->
+            <!-- Card 3: Course2 -->
             <div class="card position-4" data-index="2">
                 <div class="card-header">
                     course2
@@ -82,7 +87,7 @@
                 </div>
             </div>
 
-            <!-- Card 4: UI/UX Design -->
+            <!-- Card 4: Course3 -->
             <div class="card position-0" data-index="3">
                 <div class="card-header">
                     course3
@@ -98,13 +103,13 @@
                 </div>
             </div>
 
-            <!-- Card 5: DevOps -->
+            <!-- Card 5: Course4 -->
             <div class="card position-1" data-index="4">
                 <div class="card-header">
                     course4
                 </div>
                 <div class="card-body">
-                    <div class="card-title">DevOps & Cloud Computing</div>
+                    <div class="card-title">IDK</div>
                     <div class="card-description">
                         something about that course
                     </div>
@@ -114,13 +119,13 @@
                 </div>
             </div>
 
-            <!-- Card 6: Cybersecurity -->
+            <!-- Card 6: Course5 -->
             <div class="card position-0" data-index="5">
                 <div class="card-header">
                     course5
                 </div>
                 <div class="card-body">
-                    <div class="card-title">Cybersecurity Fundamentals</div>
+                    <div class="card-title">IDK</div>
                     <div class="card-description">
                         something about that course
                     </div>
@@ -130,13 +135,13 @@
                 </div>
             </div>
 
-            <!-- Card 7: AI & Machine Learning -->
+            <!-- Card 7: Course6 -->
             <div class="card position-0" data-index="6">
                 <div class="card-header">
                     course6
                 </div>
                 <div class="card-body">
-                    <div class="card-title">AI & Machine Learning</div>
+                    <div class="card-title">IDK</div>
                     <div class="card-description">
                         something about that course
                     </div>
@@ -146,6 +151,7 @@
                 </div>
             </div>
         </div>
+    </div>
 
         <script src="coursejs.js"></script>
 </body>

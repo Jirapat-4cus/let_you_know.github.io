@@ -66,7 +66,6 @@ let currentIndex = 0;
 
         function handleAction(action, cardIndex) {
             const card = cardData[cardIndex];
-            alert(`Action: ${action}\nCard: ${card.title}\nIndex: ${cardIndex}`);
             
             // ตัวอย่างการทำงาน - คุณสามารถเปลี่ยนเป็น window.location.href หรือ function อื่นๆ
             switch(action) {
@@ -80,25 +79,25 @@ let currentIndex = 0;
             // ไปหน้า course เฉพาะของแต่ละ course
             switch(cardIndex) {
                 case 0: // Web Development
-                    window.location.href = 'web-development.html';
+                    window.location.href = 'engineering.html';
                     break;
                 case 1: // Mobile App
-                    window.location.href = 'mobile-app.html';
+                    window.location.href = '#';
                     break;
                 case 2: // Data Science
-                    window.location.href = 'data-science.html';
+                    window.location.href = '#';
                     break;
                 case 3: // UI/UX Design
-                    window.location.href = 'ui-ux-design.html';
+                    window.location.href = '#';
                     break;
                 case 4: // DevOps
-                    window.location.href = 'devops.html';
+                    window.location.href = '#';
                     break;
                 case 5: // Cybersecurity
-                    window.location.href = 'cybersecurity.html';
+                    window.location.href = '#';
                     break;
                 case 6: // AI/ML
-                    window.location.href = 'ai-machine-learning.html';
+                    window.location.href = '#';
                     break;
                 default:
                     window.location.href = 'course.html';
