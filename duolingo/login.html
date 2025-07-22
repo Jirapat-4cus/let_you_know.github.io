@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>login</title>
     <link rel="stylesheet" href="loginstyles.css" />
+    <script type="module" src="loginfirebase.js"></script>
   </head>
   <body>
     <div class="login-container">
@@ -52,7 +53,7 @@
                 <span>or</span>
             </div>
 
-            <button type="button" class="google-btn" onclick="signInWithGoogle()">
+            <button type="button" class="google-btn" id="google-login-btn" onclick="signInWithGoogle()">
                 <div class="google-icon"></div>
                 <span>continue with google</span>
             </button>
