@@ -79,7 +79,7 @@ let currentIndex = 0;
             // ไปหน้า course เฉพาะของแต่ละ course
             switch(cardIndex) {
                 case 0: // Web Development
-                    window.location.href = 'engineercourse.html';
+                    window.location.href = 'roadmap.html';
                     break;
                 case 1: // Mobile App
                     window.location.href = '#';
