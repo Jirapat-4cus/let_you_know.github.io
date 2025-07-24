@@ -1,0 +1,170 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+.container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 1200px;
+    border: 1px solid #dcdcdc;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.header {
+    background-color: #4a4a4a;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header .logo-container {
+    display: flex;
+    align-items: center;
+}
+.header .logo {
+    width: 30px;
+    height: 30px;
+    background-color: #c0e0ff;
+    border-radius: 5px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: bold;
+}
+.header .menu-icon {
+    font-size: 24px;
+    margin-right: 20px;
+}
+.header .nav-menu {
+    display: flex;
+    gap: 20px;
+}
+.header .nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+.header .profile-icon {
+    width: 30px;
+    height: 30px;
+    background-color: #c0e0ff;
+    border-radius: 50%;
+}
+
+.profile-section {
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #d9f2ff;
+    border: 5px solid white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.profile-picture img {
+    width: 100%;
+    height: auto;
+}
+.profile-details {
+    flex-grow: 1;
+}
+.profile-details .level {
+    background-color: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.profile-details .name {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;
+}
+.profile-details .streak {
+    color: #666;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.main-content {
+    display: flex;
+    padding: 0 40px 40px 40px;
+    gap: 40px;
+    justify-content: space-around;
+}
+.content-box {
+    text-align: center;
+}
+.content-box h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+.courses .course-item {
+    background-color: #e0e0e0;
+    padding: 20px 40px;
+    border-radius: 10px;
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+}
+.achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+.achievement-item {
+    width: 80px;
+    height: 80px;
+    background-color: #f0f0f0;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.achievement-item img {
+    width: 60px;
+    height: 60px;
+}
+.achievement-item.more {
+    background-color: #666;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+.rank-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.rank-display img {
+    width: 150px;
+    height: auto;
+}
+.rank-display .rank-title {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+}
+.divider {
+    width: 1px;
+    background-color: #ccc;
+    align-self: stretch;
+}
