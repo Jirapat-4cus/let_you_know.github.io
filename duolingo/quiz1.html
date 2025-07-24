@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Series Convergence Quiz</title>
+    <link rel="stylesheet" href="quiz1styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo-section">
+            <div class="logo">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23FFD700'/%3E%3Ccircle cx='35' cy='40' r='5' fill='%23000'/%3E%3Ccircle cx='65' cy='40' r='5' fill='%23000'/%3E%3Cpath d='M 30 60 Q 50 75 70 60' stroke='%23000' stroke-width='3' fill='none'/%3E%3C/svg%3E" alt="Logo">
+            </div>
+            <div class="site-name">let me know</div>
+        </div>
+        <ul class="nav-menu">
+            <li>menu1</li>
+            <li>menu2</li>
+            <li>menu3</li>
+            <li>menu4</li>
+            <li>menu5</li>
+            <li>menu6</li>
+        </ul>
+        <div class="user-avatar">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23FFD700'/%3E%3Ccircle cx='35' cy='40' r='5' fill='%23000'/%3E%3Ccircle cx='65' cy='40' r='5' fill='%23000'/%3E%3Cpath d='M 30 60 Q 50 75 70 60' stroke='%23000' stroke-width='3' fill='none'/%3E%3C/svg%3E" alt="User">
+        </div>
+    </header>
+
+    <!-- Progress Indicator -->
+    <div class="progress-indicator">
+        <div class="progress-text">Question 1/10</div>
+        <div class="progress-score">Score: 0</div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <!-- Question -->
+        <div class="question-container">
+            <div class="question-text">พิจารณาการลู่ของอนุกรม</div>
+            <div class="question-formula">
+                <span>a<sub>n</sub> = </span>
+                <div class="fraction">
+                    <span class="numerator">1</span>
+                    <span class="denominator">2<span class="superscript">n</span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Graph -->
+        <div class="graph-container">
+            <svg class="graph-svg" viewBox="0 0 800 400">
+                <!-- Grid lines -->
+                <g stroke="#555" stroke-width="1" opacity="0.3">
+                    <!-- Vertical lines -->
+                    <line x1="100" y1="50" x2="100" y2="350" />
+                    <line x1="200" y1="50" x2="200" y2="350" />
+                    <line x1="300" y1="50" x2="300" y2="350" />
+                    <line x1="400" y1="50" x2="400" y2="350" />
+                    <line x1="500" y1="50" x2="500" y2="350" />
+                    <line x1="600" y1="50" x2="600" y2="350" />
+                    <line x1="700" y1="50" x2="700" y2="350" />
+                    
+                    <!-- Horizontal lines -->
+                    <line x1="50" y1="100" x2="750" y2="100" />
+                    <line x1="50" y1="150" x2="750" y2="150" />
+                    <line x1="50" y1="200" x2="750" y2="200" />
+                    <line x1="50" y1="250" x2="750" y2="250" />
+                    <line x1="50" y1="300" x2="750" y2="300" />
+                </g>
+
+                <!-- Axes -->
+                <g stroke="white" stroke-width="2">
+                    <!-- X axis -->
+                    <line x1="50" y1="350" x2="750" y2="350" />
+                    <path d="M 750 350 L 740 345 M 750 350 L 740 355" fill="none" />
+                    
+                    <!-- Y axis -->
+                    <line x1="50" y1="350" x2="50" y2="50" />
+                    <path d="M 50 50 L 45 60 M 50 50 L 55 60" fill="none" />
+                </g>
+
+                <!-- Axis labels -->
+                <g fill="white" font-size="14">
+                    <!-- X axis labels -->
+                    <text x="100" y="370" text-anchor="middle">1</text>
+                    <text x="200" y="370" text-anchor="middle">2</text>
+                    <text x="300" y="370" text-anchor="middle">3</text>
+                    <text x="400" y="370" text-anchor="middle">4</text>
+                    <text x="500" y="370" text-anchor="middle">5</text>
+                    <text x="600" y="370" text-anchor="middle">6</text>
+                    <text x="700" y="370" text-anchor="middle">7</text>
+                    <text x="720" y="370" text-anchor="middle">8</text>
+                    
+                    <!-- Y axis labels -->
+                    <text x="35" y="355" text-anchor="end">0.0</text>
+                    <text x="35" y="305" text-anchor="end">0.1</text>
+                    <text x="35" y="255" text-anchor="end">0.2</text>
+                    <text x="35" y="205" text-anchor="end">0.3</text>
+                    <text x="35" y="155" text-anchor="end">0.4</text>
+                    <text x="35" y="105" text-anchor="end">0.5</text>
+                </g>
+
+                <!-- Function curve for 1/2^n -->
+                <path d="" 
+                      stroke="#00BCD4" 
+                      stroke-width="3" 
+                      fill="none"
+                      id="functionCurve" />
+
+                <!-- Data points -->
+                <g fill="#00BCD4" id="dataPoints"></g>
+            </svg>
+        </div>
+
+        <!-- Answer Buttons -->
+        <div class="answer-container">
+            <button class="answer-btn convergent" onclick="checkAnswer('convergent')">
+                Convergent
+            </button>
+            <button class="answer-btn divergent" onclick="checkAnswer('divergent')">
+                Divergent
+            </button>
+        </div>
+
+        <!-- Feedback -->
+        <div class="feedback" id="feedback"></div>
+
+        <!-- Next Button -->
+        <button class="next-btn" id="nextBtn" onclick="nextQuestion()">
+            Next Question →
+        </button>
+    </main>
+
+    <script>
+        let currentQuestion = 1;
+        let score = 0;
+        let answered = false;
+
+        // Question data
+        const questions = [
+            {
+                formula: 'a_n = 1/2^n',
+                answer: 'convergent',
+                explanation: 'กราฟ“Convergent” = ลู่เข้าใกล้ค่าคงที่ค่าหนึ่งเรื่อย ๆ'
+            },
+            {
+                formula: 'a_n = n/(n+1)',
+                answer: 'divergent',
+                explanation: 'กราฟ“Convergent” = ลู่เข้าใกล้ค่าคงที่ค่าหนึ่งเรื่อย ๆ'
+            },
+            // Add more questions here
+        ];
+
+        // Draw the graph for 1/2^n
+        function drawGraph() {
+            const curve = document.getElementById('functionCurve');
+            const pointsGroup = document.getElementById('dataPoints');
+            
+            // Clear previous points
+            pointsGroup.innerHTML = '';
+            
+            // Calculate points for 1/2^n
+            let pathData = 'M';
+            const xStart = 100;
+            const xStep = 100;
+            
+            for (let n = 1; n <= 8; n++) {
+                const x = xStart + (n - 1) * xStep;
+                const value = 1 / Math.pow(2, n); // 1/2^n
+                const y = 350 - (value * 600); // Scale to graph (0.5 = 100px from bottom)
+                
+                if (n === 1) {
+                    pathData += ` ${x},${y}`;
+                } else {
+                    pathData += ` L ${x},${y}`;
+                }
+                
+                // Add point
+                const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                circle.setAttribute('cx', x);
+                circle.setAttribute('cy', y);
+                circle.setAttribute('r', '5');
+                pointsGroup.appendChild(circle);
+            }
+            
+            curve.setAttribute('d', pathData);
+        }
+
+        // Initialize graph on load
+        window.addEventListener('load', () => {
+            drawGraph();
+        });
+
+        function checkAnswer(answer) {
+            if (answered) return;
+            answered = true;
+
+            const buttons = document.querySelectorAll('.answer-btn');
+            const feedback = document.getElementById('feedback');
+            const nextBtn = document.getElementById('nextBtn');
+            const correctAnswer = questions[currentQuestion - 1].answer;
+
+            // Disable buttons
+            buttons.forEach(btn => {
+                btn.style.pointerEvents = 'none';
+            });
+
+            // Check answer
+            if (answer === correctAnswer) {
+                score++;
+                document.querySelector('.progress-score').textContent = `Score: ${score}`;
+                
+                // Show correct feedback
+                event.target.classList.add('correct');
+                feedback.textContent = 'ถูกต้อง! ' + questions[currentQuestion - 1].explanation;
+                feedback.className = 'feedback show correct';
+            } else {
+                // Show incorrect feedback
+                event.target.classList.add('incorrect');
+                
+                // Highlight correct answer
+                buttons.forEach(btn => {
+                    if (btn.textContent.trim().toLowerCase() === correctAnswer) {
+                        btn.classList.add('correct');
+                    }
+                });
+                
+                feedback.textContent = 'ไม่ถูกต้อง. ' + questions[currentQuestion - 1].explanation;
+                feedback.className = 'feedback show incorrect';
+            }
+
+            // Show next button
+            nextBtn.classList.add('show');
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            
+            if (currentQuestion > 10) {
+                // Show final score
+                showFinalScore();
+            } else {
+                // Reset for next question
+                resetQuestion();
+                loadQuestion(currentQuestion);
+            }
+        }
+
+        function resetQuestion() {
+            answered = false;
+            
+            // Reset buttons
+            const buttons = document.querySelectorAll('.answer-btn');
+            buttons.forEach(btn => {
+                btn.className = 'answer-btn';
+                btn.style.pointerEvents = 'auto';
+            });
+            
+            // Hide feedback and next button
+            document.getElementById('feedback').className = 'feedback';
+            document.getElementById('nextBtn').classList.remove('show');
+            
+            // Update progress
+            document.querySelector('.progress-text').textContent = `Question ${currentQuestion}/10`;
+        }
+
+        function loadQuestion(questionNum) {
+            // Load new question data
+            // Update formula, graph, etc.
+            drawGraph(); // Redraw graph for new question
+        }
+
+        function showFinalScore() {
+            const mainContainer = document.querySelector('.main-container');
+            const percentage = (score / 10) * 100;
+            
+            mainContainer.innerHTML = `
+                <div style="text-align: center;">
+                    <h1 style="font-size: 48px; margin-bottom: 20px;">Quiz Complete!</h1>
+                    <div style="font-size: 72px; color: #4CAF50; margin-bottom: 20px;">${score}/10</div>
+                    <div style="font-size: 24px; margin-bottom: 40px;">คุณได้ ${percentage}%</div>
+                    <button class="next-btn show" onclick="window.location.href='/learning-path'">
+                        Back to Learning Path
+                    </button>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>

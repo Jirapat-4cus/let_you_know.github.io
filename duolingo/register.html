@@ -3,9 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>login</title>
+    <title>Signup</title>
     <link rel="stylesheet" href="loginstyles.css" />
-    <script type="module" src="loginfirebase.js"></script>
   </head>
   <body>
     <div class="login-container">
@@ -21,10 +20,21 @@
       <div class="login-section">
         <div class="sign-in-header">
           <span class="sign-in-icon">🔐</span>
-          <span>sign in</span>
+          <span>sign up</span>
         </div>
 
         <form id="loginForm">
+          <div class="form-group">
+            <input 
+              type="text" 
+              class="form-input" 
+              id="username"
+              placeholder="Username" 
+              required 
+            />
+          </div>
+
+          <form id="loginForm">
           <div class="form-group">
             <input 
               type="text" 
@@ -45,29 +55,25 @@
             />
           </div>
 
-          <button type="submit" class="sign-in-btn">
+          <div class="form-group">
+            <input 
+              type="password" 
+              class="form-input" 
+              id="confirmPassword"
+              placeholder="Confirm Password" 
+              required 
+            />
+          </div>
+
+          <button type="submit" class="sign-in-btn" id="submit">
             <span class="sign-in-icon">🔐</span>
-            <span>sign in</span>
+            <span>sign up</span>
           </button>
         </form>
 
-        <div class="divider">
-          <span>or</span>
-        </div>
-
-        <button type="button" class="google-btn" id="google-login-btn">
-          <div class="google-icon"></div>
-          <span>continue with google</span>
-        </button>
-
-        <div class="signup-link">
-          Already have an account? <a href="register.html" onclick="toggleToSignUp()">sign in</a>
-        </div>
       </div>
     </div>
 
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js"></script>
+    <script type="module" src="registerfirebase.js"></script>
   </body>
 </html>
