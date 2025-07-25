@@ -1,516 +1,458 @@
 <!DOCTYPE html>
 <html lang="th">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Series Convergence Quiz</title>
-    <link rel="stylesheet" href="quiz1styles.css" />
-    <link rel="stylesheet" href="font.css" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body class="mali-regular">
+    <link rel="stylesheet" href="quiz1styles.css">
+</head>
+ <body>
     <!-- Header -->
     <header class="header">
-      <div class="logo-section">
-        <div class="logo">
-          <img
-            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23FFD700'/%3E%3Ccircle cx='35' cy='40' r='5' fill='%23000'/%3E%3Ccircle cx='65' cy='40' r='5' fill='%23000'/%3E%3Cpath d='M 30 60 Q 50 75 70 60' stroke='%23000' stroke-width='3' fill='none'/%3E%3C/svg%3E"
-            alt="Logo"
-          />
+        <div class="logo-section">
+            <div class="logo">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23FFD700'/%3E%3Ccircle cx='35' cy='40' r='5' fill='%23000'/%3E%3Ccircle cx='65' cy='40' r='5' fill='%23000'/%3E%3Cpath d='M 30 60 Q 50 75 70 60' stroke='%23000' stroke-width='3' fill='none'/%3E%3C/svg%3E" alt="Logo">
+            </div>
+            <div class="site-name">let me know</div>
         </div>
-        <div class="site-name">let me know</div>
-      </div>
-      <ul class="nav-menu">
-        <li>menu1</li>
-        <li>menu2</li>
-        <li>menu3</li>
-        <li>menu4</li>
-        <li>menu5</li>
-        <li>menu6</li>
-      </ul>
-      <div class="user-avatar">
-        <img
-          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23FFD700'/%3E%3Ccircle cx='35' cy='40' r='5' fill='%23000'/%3E%3Ccircle cx='65' cy='40' r='5' fill='%23000'/%3E%3Cpath d='M 30 60 Q 50 75 70 60' stroke='%23000' stroke-width='3' fill='none'/%3E%3C/svg%3E"
-          alt="User"
-        />
-      </div>
+        <ul class="nav-menu">
+            <li>menu1</li>
+            <li>menu2</li>
+            <li>menu3</li>
+            <li>menu4</li>
+            <li>menu5</li>
+            <li>menu6</li>
+        </ul>
+        <div class="user-avatar">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23FFD700'/%3E%3Ccircle cx='35' cy='40' r='5' fill='%23000'/%3E%3Ccircle cx='65' cy='40' r='5' fill='%23000'/%3E%3Cpath d='M 30 60 Q 50 75 70 60' stroke='%23000' stroke-width='3' fill='none'/%3E%3C/svg%3E" alt="User">
+        </div>
     </header>
 
     <!-- Progress Indicator -->
     <div class="progress-indicator">
-      <div class="progress-text">
-        Question <span id="currentQ">1</span>/<span id="totalQ">10</span>
-      </div>
-      <div class="progress-score">Score: <span id="score">0</span></div>
+        <div class="progress-text">Question <span id="currentQ">1</span>/<span id="totalQ">10</span></div>
+        <div class="progress-score">Score: <span id="score">0</span></div>
     </div>
 
     <!-- Main Content -->
     <main class="main-container">
-      <!-- Question -->
-      <div class="question-container">
-        <div class="question-text" id="questionText">
-          พิจารณาการลู่ของอนุกรม
+        <!-- Question -->
+        <div class="question-container">
+            <div class="question-text" id="questionText">พิจารณาการลู่ของอนุกรม</div>
+            <div class="question-formula" id="questionFormula">
+                <!-- Formula will be inserted here -->
+            </div>
+            <div class="sub-text" id="subText"></div>
         </div>
-        <div class="question-formula" id="questionFormula">
-          <!-- Formula will be inserted here -->
+
+        <!-- Graph (only for series questions) -->
+        <div class="graph-container" id="graphContainer" style="display: none;">
+            <svg class="graph-svg" viewBox="0 0 800 400">
+                <!-- Grid lines -->
+                <g stroke="#555" stroke-width="1" opacity="0.3">
+                    <!-- Vertical lines -->
+                    <line x1="100" y1="50" x2="100" y2="350" />
+                    <line x1="200" y1="50" x2="200" y2="350" />
+                    <line x1="300" y1="50" x2="300" y2="350" />
+                    <line x1="400" y1="50" x2="400" y2="350" />
+                    <line x1="500" y1="50" x2="500" y2="350" />
+                    <line x1="600" y1="50" x2="600" y2="350" />
+                    <line x1="700" y1="50" x2="700" y2="350" />
+                    
+                    <!-- Horizontal lines -->
+                    <line x1="50" y1="100" x2="750" y2="100" />
+                    <line x1="50" y1="150" x2="750" y2="150" />
+                    <line x1="50" y1="200" x2="750" y2="200" />
+                    <line x1="50" y1="250" x2="750" y2="250" />
+                    <line x1="50" y1="300" x2="750" y2="300" />
+                </g>
+
+                <!-- Axes -->
+                <g stroke="white" stroke-width="2">
+                    <!-- X axis -->
+                    <line x1="50" y1="350" x2="750" y2="350" />
+                    <path d="M 750 350 L 740 345 M 750 350 L 740 355" fill="none" />
+                    
+                    <!-- Y axis -->
+                    <line x1="50" y1="350" x2="50" y2="50" />
+                    <path d="M 50 50 L 45 60 M 50 50 L 55 60" fill="none" />
+                </g>
+
+                <!-- Axis labels -->
+                <g fill="white" font-size="14">
+                    <!-- X axis labels -->
+                    <text x="100" y="370" text-anchor="middle">1</text>
+                    <text x="200" y="370" text-anchor="middle">2</text>
+                    <text x="300" y="370" text-anchor="middle">3</text>
+                    <text x="400" y="370" text-anchor="middle">4</text>
+                    <text x="500" y="370" text-anchor="middle">5</text>
+                    <text x="600" y="370" text-anchor="middle">6</text>
+                    <text x="700" y="370" text-anchor="middle">7</text>
+                    <text x="720" y="370" text-anchor="middle">8</text>
+                    
+                    <!-- Y axis labels -->
+                    <g class="y-axis-labels">
+                    <text x="35" y="350" text-anchor="end" class="y-axis-label">0.0</text>
+                    <text x="35" y="275" text-anchor="end" class="y-axis-label">0.5</text>
+                    <text x="35" y="200" text-anchor="end" class="y-axis-label">1.0</text>
+                    <text x="35" y="125" text-anchor="end" class="y-axis-label">1.5</text>
+                    <text x="35" y="50" text-anchor="end" class="y-axis-label">2.0</text>
+                </g>
+
+                <!-- Function curve -->
+                <path d="" 
+                      stroke="#00BCD4" 
+                      stroke-width="3" 
+                      fill="none"
+                      id="functionCurve" />
+
+                <!-- Data points -->
+                <g fill="#00BCD4" id="dataPoints"></g>
+            </svg>
         </div>
-        <div class="sub-text" id="subText"></div>
-      </div>
 
-      <!-- Graph (only for series questions) -->
-      <div class="graph-container" id="graphContainer" style="display: none">
-        <svg class="graph-svg" viewBox="0 0 800 400">
-          <!-- Grid lines -->
-          <g stroke="#555" stroke-width="1" opacity="0.3">
-            <!-- Vertical lines -->
-            <line x1="100" y1="50" x2="100" y2="350" />
-            <line x1="200" y1="50" x2="200" y2="350" />
-            <line x1="300" y1="50" x2="300" y2="350" />
-            <line x1="400" y1="50" x2="400" y2="350" />
-            <line x1="500" y1="50" x2="500" y2="350" />
-            <line x1="600" y1="50" x2="600" y2="350" />
-            <line x1="700" y1="50" x2="700" y2="350" />
+        <!-- Answer Options -->
+        <div id="answerSection">
+            <!-- Will be populated dynamically -->
+        </div>
 
-            <!-- Horizontal lines -->
-            <line x1="50" y1="100" x2="750" y2="100" />
-            <line x1="50" y1="150" x2="750" y2="150" />
-            <line x1="50" y1="200" x2="750" y2="200" />
-            <line x1="50" y1="250" x2="750" y2="250" />
-            <line x1="50" y1="300" x2="750" y2="300" />
-          </g>
+        <!-- Feedback -->
+        <div class="feedback" id="feedback"></div>
 
-          <!-- Axes -->
-          <g stroke="white" stroke-width="2">
-            <!-- X axis -->
-            <line x1="50" y1="350" x2="750" y2="350" />
-            <path d="M 750 350 L 740 345 M 750 350 L 740 355" fill="none" />
-
-            <!-- Y axis -->
-            <line x1="50" y1="350" x2="50" y2="50" />
-            <path d="M 50 50 L 45 60 M 50 50 L 55 60" fill="none" />
-          </g>
-
-          <!-- Axis labels -->
-          <g fill="white" font-size="14">
-            <!-- X axis labels -->
-            <text x="100" y="370" text-anchor="middle">1</text>
-            <text x="200" y="370" text-anchor="middle">2</text>
-            <text x="300" y="370" text-anchor="middle">3</text>
-            <text x="400" y="370" text-anchor="middle">4</text>
-            <text x="500" y="370" text-anchor="middle">5</text>
-            <text x="600" y="370" text-anchor="middle">6</text>
-            <text x="700" y="370" text-anchor="middle">7</text>
-            <text x="720" y="370" text-anchor="middle">8</text>
-
-            <!-- Y axis labels -->
-            <g class="y-axis-labels">
-              <text x="35" y="355" text-anchor="end" class="y-axis-label">
-                0.0
-              </text>
-              <text x="35" y="305" text-anchor="end" class="y-axis-label">
-                0.1
-              </text>
-              <text x="35" y="255" text-anchor="end" class="y-axis-label">
-                0.2
-              </text>
-              <text x="35" y="205" text-anchor="end" class="y-axis-label">
-                0.3
-              </text>
-              <text x="35" y="155" text-anchor="end" class="y-axis-label">
-                0.4
-              </text>
-              <text x="35" y="105" text-anchor="end" class="y-axis-label">
-                0.5
-              </text>
-            </g>
-          </g>
-
-          <!-- Function curve -->
-          <path
-            d=""
-            stroke="#00BCD4"
-            stroke-width="3"
-            fill="none"
-            id="functionCurve"
-          />
-
-          <!-- Data points -->
-          <g fill="#00BCD4" id="dataPoints"></g>
-        </svg>
-      </div>
-
-      <!-- Answer Options -->
-      <div id="answerSection">
-        <!-- Will be populated dynamically -->
-      </div>
-
-      <!-- Feedback -->
-      <div class="feedback" id="feedback"></div>
-
-      <!-- Next Button -->
-      <button class="next-btn" id="nextBtn" onclick="nextQuestion()">
-        Next Question →
-      </button>
+        <!-- Next Button -->
+        <button class="next-btn" id="nextBtn" onclick="nextQuestion()">
+            Next Question →
+        </button>
     </main>
 
     <script>
-      let currentQuestion = 1;
-      let score = 0;
-      let answered = false;
+        let currentQuestion = 1;
+        let score = 0;
+        let answered = false;
 
-      // All question types
-      const questions = [
-        // Series convergence questions
-        {
-          type: "series",
-          text: "พิจารณาการลู่ของอนุกรม",
-          formula: "1/2^n",
-          answer: "convergent",
-          explanation:
-            "อนุกรมนี้ลู่เข้า เพราะเป็น geometric series ที่มี r = 1/2 < 1",
-          graphType: "exponential-decay",
-          options: ["Convergent", "Divergent"],
-        },
-        {
-          type: "series",
-          text: "พิจารณาการลู่ของอนุกรม",
-          formula: "2",
-          answer: "divergent",
-          explanation: "อนุกรมนี้ลู่ออก เพราะ lim(a_n) = 2 ≠ 0",
-          graphType: "constant",
-          options: ["Convergent", "Divergent"],
-        },
-        {
-          type: "series",
-          text: "พิจารณาการลู่ของอนุกรม",
-          formula: "(-1)^n",
-          answer: "divergent",
-          explanation: "อนุกรมนี้ลู่ออก เพราะค่าสลับกันระหว่าง 1 และ -1",
-          graphType: "alternating",
-          options: ["Convergent", "Divergent"],
-        },
-        // Multiple choice growth rate
-        {
-          type: "growth-rate",
-          text: 'พิจารณาว่าข้อใดต่อไปนี้เป็น "พหุนาม"',
-          subText: "",
-          answer: "n^5",
-          explanation: "n^5 เป็นพหุนามดีกรี 5 ส่วนข้ออื่นๆ ไม่ใช่พหุนาม",
-          options: ["n^5", "7^n", "n^-1", "√n"],
-        },
-        // Fastest growth
-        {
-          type: "growth-rate",
-          text: 'พิจารณาว่าข้อใดต่อไปนี้เป็น "เอกซ์โพเนนเชียล"',
-          subText: 'เอกซ์โพเนนเชียล = ตัวแปรอยู่ "ตำแหน่" เป็นเลขชี้กำลัง',
-          answer: "15^n",
-          explanation:
-            "15^n เป็นฟังก์ชันเอกซ์โพเนนเชียล เพราะ n อยู่ในตำแหน่งเลขชี้กำลัง",
-          options: ["15^n", "n^n", "n^10", "√n"],
-        },
-        // Limit calculation
-        {
-          type: "limit",
-          text: "จงพิจารณาลิมิตที่กำหนดให้",
-          formula: "limit_formula",
-          answer: "convergent_-2/5",
-          explanation:
-            "เมื่อ n→∞, 2^n และ 7^n เติบโตเร็วกว่า 5^n และ 7^n ตามลำดับ จึงได้ lim = -2/5",
-          options: [
-            "Convergent lim a_n = -2/5",
-            "Convergent lim a_n = -1",
-            "Convergent lim a_n = -7",
-            "Divergent หาค่าไม่ได้",
-          ],
-        },
-      ];
+        // All question types
+        const questions = [
+            // Series convergence questions
+            {
+                type: 'series',
+                text: 'พิจารณาการลู่ของอนุกรม',
+                formula: '1/2^n',
+                answer: 'convergent',
+                explanation: 'อนุกรมนี้ลู่เข้า เพราะเป็น geometric series ที่มี r = 1/2 < 1',
+                graphType: 'exponential-decay',
+                options: ['Convergent', 'Divergent']
+            },
+            {
+                type: 'series',
+                text: 'พิจารณาการลู่ของอนุกรม',
+                formula: '2',
+                answer: 'convergent',
+                explanation: 'กราฟ“Convergent” = ลู่เข้าใกล้ค่าคงที่ค่าหนึ่งเรื่อย ๆ',
+                graphType: 'constant',
+                options: ['Convergent', 'Divergent']
+            },
+            // Multiple choice growth rate
+            {
+                type: 'growth-rate',
+                text: 'พิจารณาว่าข้อใดต่อไปนี้เป็น "พหุนาม"',
+                subText: '',
+                answer: 'n^5',
+                explanation: 'n^5 เป็นพหุนามดีกรี 5 ส่วนข้ออื่นๆ ไม่ใช่พหุนาม',
+                options: ['n^5', '7^n', 'n^-1', '√n']
+            },
+            // Fastest growth
+            {
+                type: 'growth-rate',
+                text: 'พิจารณาว่าข้อใดต่อไปนี้เป็น "เอกซ์โพเนนเชียล"',
+                subText: 'เอกซ์โพเนนเชียล = ตัวแปรอยู่ "ตำแหน่" เป็นเลขชี้กำลัง',
+                answer: '15^n',
+                explanation: '15^n เป็นฟังก์ชันเอกซ์โพเนนเชียล เพราะ n อยู่ในตำแหน่งเลขชี้กำลัง',
+                options: ['15^n', 'n^n', 'n^10', '√n']
+            },
+            // Limit calculation
+            {
+                type: 'limit',
+                text: 'จงพิจารณาลิมิตที่กำหนดให้',
+                formula: 'limit_formula',
+                answer: 'convergent_-2/5',
+                explanation: 'เมื่อ n→∞, 2^n และ 7^n เติบโตเร็วกว่า 5^n และ 7^n ตามลำดับ จึงได้ lim = -2/5',
+                options: [
+                    '<span>Convergent<span> <span>lim <span><> <span>a_n = -2/5<span>',
+                    '<span>Convergent<span> <span>lim n→∞<span> <span>a_n = -1<span>',
+                    '<span>Convergent<span> <span>lim n→∞<span> <span>a_n = -7<span>',
+                    'Divergent หาค่าไม่ได้'
+                ]
+            }
+        ];
 
-      // Initialize quiz
-      window.addEventListener("load", () => {
-        loadQuestion(currentQuestion);
-        document.getElementById("totalQ").textContent = questions.length;
-      });
+        // Initialize quiz
+        window.addEventListener('load', () => {
+            loadQuestion(currentQuestion);
+            document.getElementById('totalQ').textContent = questions.length;
+        });
 
-      function loadQuestion(questionNum) {
-        const question = questions[questionNum - 1];
-        if (!question) return;
-
-        // Update question text
-        document.getElementById("questionText").textContent = question.text;
-        document.getElementById("subText").textContent = question.subText || "";
-
-        // Update formula
-        const formulaDiv = document.getElementById("questionFormula");
-
-        if (question.type === "series") {
-          // Show graph for series
-          document.getElementById("graphContainer").style.display = "block";
-
-          // Update formula
-          if (question.formula === "1/2^n") {
-            formulaDiv.innerHTML = `
+        function loadQuestion(questionNum) {
+            const question = questions[questionNum - 1];
+            if (!question) return;
+            
+            // Update question text
+            document.getElementById('questionText').textContent = question.text;
+            document.getElementById('subText').textContent = question.subText || '';
+            
+            // Update formula
+            const formulaDiv = document.getElementById('questionFormula');
+            
+            if (question.type === 'series') {
+                // Show graph for series
+                document.getElementById('graphContainer').style.display = 'block';
+                
+                // Update formula
+                if (question.formula === '1/2^n') {
+                    formulaDiv.innerHTML = `
                         <span>a<sub>n</sub> = </span>
                         <div class="fraction">
                             <span class="numerator">1</span>
                             <span class="denominator">2<span class="superscript">n</span></span>
                         </div>
                     `;
-          } else if (question.formula === "2") {
-            formulaDiv.innerHTML = `<span>a<sub>n</sub> = 2</span>`;
-          } else if (question.formula === "(-1)^n") {
-            formulaDiv.innerHTML = `<span>a<sub>n</sub> = (-1)<span class="superscript">n</span></span>`;
-          }
-
-          // Draw graph
-          if (question.graphType) {
-            drawGraph(question.graphType);
-          }
-        } else if (question.type === "limit") {
-          // Hide graph for non-series questions
-          document.getElementById("graphContainer").style.display = "none";
-
-          // Complex limit formula
-          formulaDiv.innerHTML = `
+                } else if (question.formula === '2') {
+                    formulaDiv.innerHTML = `<span>a<sub>n</sub> = 2</span>`;
+                } else if (question.formula === '(-1)^n') {
+                    formulaDiv.innerHTML = `<span>a<sub>n</sub> = (-1)<span class="superscript">n</span></span>`;
+                }
+                
+                // Draw graph
+                if (question.graphType) {
+                    drawGraph(question.graphType);
+                }
+                
+            } else if (question.type === 'limit') {
+                // Hide graph for non-series questions
+                document.getElementById('graphContainer').style.display = 'none';
+                
+                // Complex limit formula
+                formulaDiv.innerHTML = `
                     <div class="complex-formula">
-                        <span>a<sub>n</sub> = </span>
+                        <span>lim<sub>n→∞</sub> a<sub>n</sub> = </span>
                         <div class="fraction">
                             <span class="numerator">2<span class="superscript">n</span> + 7<span class="superscript">n</span></span>
                             <span class="denominator">5<span class="superscript">n-1</span> - 7<span class="superscript">n-1</span></span>
                         </div>
                     </div>
                 `;
-        } else {
-          // Hide graph and formula for growth rate questions
-          document.getElementById("graphContainer").style.display = "none";
-          formulaDiv.innerHTML = "";
+            } else {
+                // Hide graph and formula for growth rate questions
+                document.getElementById('graphContainer').style.display = 'none';
+                formulaDiv.innerHTML = '';
+            }
+            
+            // Create answer buttons
+            createAnswerButtons(question);
         }
 
-        // Create answer buttons
-        createAnswerButtons(question);
-      }
-
-      function createAnswerButtons(question) {
-        const answerSection = document.getElementById("answerSection");
-        answerSection.innerHTML = "";
-
-        // Determine layout based on number of options
-        if (question.options.length === 2) {
-          const container = document.createElement("div");
-          container.className = "answer-container";
-
-          question.options.forEach((option, index) => {
-            const btn = document.createElement("button");
-            btn.className = "answer-btn";
-            btn.textContent = option;
-            btn.onclick = () => checkAnswer(option, question);
-            container.appendChild(btn);
-          });
-
-          answerSection.appendChild(container);
-        } else {
-          const grid = document.createElement("div");
-          grid.className = "answer-grid";
-
-          question.options.forEach((option, index) => {
-            const btn = document.createElement("button");
-            btn.className = "answer-btn";
-
-            // Special formatting for limit options
-            if (option.includes("lim")) {
-              const parts = option.split(" ");
-              btn.innerHTML = `${parts[0]}<br>lim a<sub>n</sub> = ${
-                parts[parts.length - 1]
-              }`;
+        function createAnswerButtons(question) {
+            const answerSection = document.getElementById('answerSection');
+            answerSection.innerHTML = '';
+            
+            // Determine layout based on number of options
+            if (question.options.length === 2) {
+                const container = document.createElement('div');
+                container.className = 'answer-container';
+                
+                question.options.forEach((option, index) => {
+                    const btn = document.createElement('button');
+                    btn.className = 'answer-btn';
+                    btn.textContent = option;
+                    btn.onclick = () => checkAnswer(option, question);
+                    container.appendChild(btn);
+                });
+                
+                answerSection.appendChild(container);
             } else {
-              btn.textContent = option;
+                const grid = document.createElement('div');
+                grid.className = 'answer-grid';
+                
+                question.options.forEach((option, index) => {
+                    const btn = document.createElement('button');
+                    btn.className = 'answer-btn';
+                    
+                    // Special formatting for limit options
+                    if (option.includes('lim')) {
+                        const parts = option.split(' ');
+                        btn.innerHTML = `${parts[0]}<br>lim a<sub>n</sub> = ${parts[parts.length - 1]}`;
+                    } else {
+                        btn.textContent = option;
+                    }
+                    
+                    btn.onclick = () => checkAnswer(option, question);
+                    grid.appendChild(btn);
+                });
+                
+                answerSection.appendChild(grid);
+            }
+        }
+
+        function checkAnswer(selectedAnswer, question) {
+            if (answered) return;
+            answered = true;
+
+            const buttons = document.querySelectorAll('.answer-btn');
+            const feedback = document.getElementById('feedback');
+            const nextBtn = document.getElementById('nextBtn');
+
+            // Disable all buttons
+            buttons.forEach(btn => {
+                btn.style.pointerEvents = 'none';
+            });
+
+            // Find correct answer button
+            let isCorrect = false;
+            
+            // Check answer based on question type
+            if (question.type === 'series') {
+                isCorrect = selectedAnswer.toLowerCase() === question.answer;
+            } else if (question.type === 'growth-rate') {
+                isCorrect = selectedAnswer === question.answer;
+            } else if (question.type === 'limit') {
+                isCorrect = selectedAnswer.includes(question.answer.split('_')[1]);
             }
 
-            btn.onclick = () => checkAnswer(option, question);
-            grid.appendChild(btn);
-          });
+            // Update UI
+            buttons.forEach(btn => {
+                const btnText = btn.textContent.trim();
+                const btnHTML = btn.innerHTML;
+                
+                if (btnText === selectedAnswer || btnHTML.includes(selectedAnswer)) {
+                    if (isCorrect) {
+                        btn.classList.add('correct');
+                    } else {
+                        btn.classList.add('incorrect');
+                    }
+                }
+                
+                // Highlight correct answer
+                if ((question.type === 'series' && btnText.toLowerCase() === question.answer) ||
+                    (question.type === 'growth-rate' && btnText === question.answer) ||
+                    (question.type === 'limit' && btnHTML.includes(question.answer.split('_')[1]))) {
+                    btn.classList.add('highlight-correct');
+                }
+            });
 
-          answerSection.appendChild(grid);
-        }
-      }
-
-      function checkAnswer(selectedAnswer, question) {
-        if (answered) return;
-        answered = true;
-
-        const buttons = document.querySelectorAll(".answer-btn");
-        const feedback = document.getElementById("feedback");
-        const nextBtn = document.getElementById("nextBtn");
-
-        // Disable all buttons
-        buttons.forEach((btn) => {
-          btn.style.pointerEvents = "none";
-        });
-
-        // Find correct answer button
-        let isCorrect = false;
-
-        // Check answer based on question type
-        if (question.type === "series") {
-          isCorrect = selectedAnswer.toLowerCase() === question.answer;
-        } else if (question.type === "growth-rate") {
-          isCorrect = selectedAnswer === question.answer;
-        } else if (question.type === "limit") {
-          isCorrect = selectedAnswer.includes(question.answer.split("_")[1]);
-        }
-
-        // Update UI
-        buttons.forEach((btn) => {
-          const btnText = btn.textContent.trim();
-          const btnHTML = btn.innerHTML;
-
-          if (btnText === selectedAnswer || btnHTML.includes(selectedAnswer)) {
+            // Update score
             if (isCorrect) {
-              btn.classList.add("correct");
+                score++;
+                document.getElementById('score').textContent = score;
+                feedback.textContent = 'ถูกต้อง! ' + question.explanation;
+                feedback.className = 'feedback show correct';
             } else {
-              btn.classList.add("incorrect");
+                feedback.textContent = 'ไม่ถูกต้อง. ' + question.explanation;
+                feedback.className = 'feedback show incorrect';
             }
-          }
 
-          // Highlight correct answer
-          if (
-            (question.type === "series" &&
-              btnText.toLowerCase() === question.answer) ||
-            (question.type === "growth-rate" && btnText === question.answer) ||
-            (question.type === "limit" &&
-              btnHTML.includes(question.answer.split("_")[1]))
-          ) {
-            btn.classList.add("highlight-correct");
-          }
-        });
-
-        // Update score
-        if (isCorrect) {
-          score++;
-          document.getElementById("score").textContent = score;
-          feedback.textContent = "ถูกต้อง! " + question.explanation;
-          feedback.className = "feedback show correct";
-        } else {
-          feedback.textContent = "ไม่ถูกต้อง. " + question.explanation;
-          feedback.className = "feedback show incorrect";
+            // Show next button
+            nextBtn.classList.add('show');
         }
 
-        // Show next button
-        nextBtn.classList.add("show");
-      }
-
-      function nextQuestion() {
-        currentQuestion++;
-
-        if (currentQuestion > questions.length) {
-          showFinalScore();
-        } else {
-          resetQuestion();
-          loadQuestion(currentQuestion);
-        }
-      }
-
-      function resetQuestion() {
-        answered = false;
-
-        // Hide feedback and next button
-        document.getElementById("feedback").className = "feedback";
-        document.getElementById("nextBtn").classList.remove("show");
-
-        // Update progress
-        document.getElementById("currentQ").textContent = currentQuestion;
-      }
-
-      // Graph drawing functions
-      function drawGraph(graphType) {
-        const curve = document.getElementById("functionCurve");
-        const pointsGroup = document.getElementById("dataPoints");
-
-        // Clear previous
-        pointsGroup.innerHTML = "";
-
-        let pathData = "M";
-        const xStart = 100;
-        const xStep = 100;
-
-        switch (graphType) {
-          case "exponential-decay":
-            for (let n = 1; n <= 8; n++) {
-              const x = xStart + (n - 1) * xStep;
-              const value = 1 / Math.pow(2, n);
-              const y = 350 - value * 600;
-
-              if (n === 1) pathData += ` ${x},${y}`;
-              else pathData += ` L ${x},${y}`;
-
-              addPoint(pointsGroup, x, y);
+        function nextQuestion() {
+            currentQuestion++;
+            
+            if (currentQuestion > questions.length) {
+                showFinalScore();
+            } else {
+                resetQuestion();
+                loadQuestion(currentQuestion);
             }
-            break;
-
-          case "constant":
-            const constantY = 350 - 2 * 150;
-            for (let n = 1; n <= 8; n++) {
-              const x = xStart + (n - 1) * xStep;
-
-              if (n === 1) pathData += ` ${x},${constantY}`;
-              else pathData += ` L ${x},${constantY}`;
-
-              addPoint(pointsGroup, x, constantY);
-            }
-            break;
-
-          case "alternating":
-            for (let n = 1; n <= 8; n++) {
-              const x = xStart + (n - 1) * xStep;
-              const value = Math.pow(-1, n);
-              const y = 200 - value * 150;
-
-              if (n === 1) pathData += ` ${x},${y}`;
-              else pathData += ` L ${x},${y}`;
-
-              addPoint(pointsGroup, x, y);
-            }
-            break;
         }
 
-        curve.setAttribute("d", pathData);
-      }
+        function resetQuestion() {
+            answered = false;
+            
+            // Hide feedback and next button
+            document.getElementById('feedback').className = 'feedback';
+            document.getElementById('nextBtn').classList.remove('show');
+            
+            // Update progress
+            document.getElementById('currentQ').textContent = currentQuestion;
+        }
 
-      function addPoint(group, x, y) {
-        const circle = document.createElementNS(
-          "http://www.w3.org/2000/svg",
-          "circle"
-        );
-        circle.setAttribute("cx", x);
-        circle.setAttribute("cy", y);
-        circle.setAttribute("r", "5");
-        group.appendChild(circle);
-      }
+        // Graph drawing functions
+        function drawGraph(graphType) {
+            const curve = document.getElementById('functionCurve');
+            const pointsGroup = document.getElementById('dataPoints');
+            
+            // Clear previous
+            pointsGroup.innerHTML = '';
+            
+            let pathData = 'M';
+            const xStart = 100;
+            const xStep = 100;
+            
+            switch(graphType) {
+                case 'exponential-decay':
+                    for (let n = 1; n <= 8; n++) {
+                        const x = xStart + (n - 1) * xStep;
+                        const value = 1 / Math.pow(2, n);
+                        const y = 350 - (value * 600);
+                        
+                        if (n === 1) pathData += ` ${x},${y}`;
+                        else pathData += ` L ${x},${y}`;
+                        
+                        addPoint(pointsGroup, x, y);
+                    }
+                    break;
+                    
+                case 'constant':
+                    const constantY = 50; // y = 50 for value 2.0 (top of scale)
+                    for (let n = 1; n <= 5; n++) {
+                    const x = xStart + (n - 1) * xStep;
+        
+                    if (n === 1) pathData += ` ${x},${constantY}`;
+                    else pathData += ` L ${x},${constantY}`;
+        
+                    addPoint(pointsGroup, x, constantY);
+                }
+                    break;
+                    
+                case 'alternating':
+                    for (let n = 1; n <= 8; n++) {
+                        const x = xStart + (n - 1) * xStep;
+                        const value = Math.pow(-1, n);
+                        const y = 200 - (value * 150);
+                        
+                        if (n === 1) pathData += ` ${x},${y}`;
+                        else pathData += ` L ${x},${y}`;
+                        
+                        addPoint(pointsGroup, x, y);
+                    }
+                    break;
+            }
+            
+            curve.setAttribute('d', pathData);
+        }
 
-      function showFinalScore() {
-        const mainContainer = document.querySelector(".main-container");
-        const percentage = (score / questions.length) * 100;
+        function addPoint(group, x, y) {
+            const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            circle.setAttribute('cx', x);
+            circle.setAttribute('cy', y);
+            circle.setAttribute('r', '5');
+            group.appendChild(circle);
+        }
 
-        mainContainer.innerHTML = `
+        function showFinalScore() {
+            const mainContainer = document.querySelector('.main-container');
+            const percentage = (score / questions.length) * 100;
+            
+            mainContainer.innerHTML = `
                 <div style="text-align: center;">
                     <h1 style="font-size: 48px; margin-bottom: 20px;">Quiz Complete!</h1>
-                    <div style="font-size: 72px; color: #4CAF50; margin-bottom: 20px;">${score}/${
-          questions.length
-        }</div>
-                    <div style="font-size: 24px; margin-bottom: 40px;">คุณได้ ${percentage.toFixed(
-                      1
-                    )}%</div>
+                    <div style="font-size: 72px; color: #4CAF50; margin-bottom: 20px;">${score}/${questions.length}</div>
+                    <div style="font-size: 24px; margin-bottom: 40px;">คุณได้ ${percentage.toFixed(1)}%</div>
                     <button class="next-btn show" onclick="window.location.href='roadmap.html'">
                         Back to Learning Path
                     </button>
                 </div>
             `;
-      }
+        }
     </script>
-  </body>
+</body>
 </html>
