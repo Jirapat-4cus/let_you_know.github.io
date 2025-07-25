@@ -92,13 +92,11 @@
                     
                     <!-- Y axis labels -->
                     <g class="y-axis-labels">
-                        <text x="35" y="355" text-anchor="end" class="y-axis-label">0.0</text>
-                        <text x="35" y="305" text-anchor="end" class="y-axis-label">0.1</text>
-                        <text x="35" y="255" text-anchor="end" class="y-axis-label">0.2</text>
-                        <text x="35" y="205" text-anchor="end" class="y-axis-label">0.3</text>
-                        <text x="35" y="155" text-anchor="end" class="y-axis-label">0.4</text>
-                        <text x="35" y="105" text-anchor="end" class="y-axis-label">0.5</text>
-                    </g>
+                    <text x="35" y="350" text-anchor="end" class="y-axis-label">0.0</text>
+                    <text x="35" y="275" text-anchor="end" class="y-axis-label">0.5</text>
+                    <text x="35" y="200" text-anchor="end" class="y-axis-label">1.0</text>
+                    <text x="35" y="125" text-anchor="end" class="y-axis-label">1.5</text>
+                    <text x="35" y="50" text-anchor="end" class="y-axis-label">2.0</text>
                 </g>
 
                 <!-- Function curve -->
@@ -148,18 +146,9 @@
                 type: 'series',
                 text: 'พิจารณาการลู่ของอนุกรม',
                 formula: '2',
-                answer: 'divergent',
-                explanation: 'อนุกรมนี้ลู่ออก เพราะ lim(a_n) = 2 ≠ 0',
+                answer: 'convergent',
+                explanation: 'กราฟ“Convergent” = ลู่เข้าใกล้ค่าคงที่ค่าหนึ่งเรื่อย ๆ',
                 graphType: 'constant',
-                options: ['Convergent', 'Divergent']
-            },
-            {
-                type: 'series',
-                text: 'พิจารณาการลู่ของอนุกรม',
-                formula: '(-1)^n',
-                answer: 'divergent',
-                explanation: 'อนุกรมนี้ลู่ออก เพราะค่าสลับกันระหว่าง 1 และ -1',
-                graphType: 'alternating',
                 options: ['Convergent', 'Divergent']
             },
             // Multiple choice growth rate
@@ -188,9 +177,9 @@
                 answer: 'convergent_-2/5',
                 explanation: 'เมื่อ n→∞, 2^n และ 7^n เติบโตเร็วกว่า 5^n และ 7^n ตามลำดับ จึงได้ lim = -2/5',
                 options: [
-                    'Convergent lim a_n = -2/5',
-                    'Convergent lim a_n = -1',
-                    'Convergent lim a_n = -7',
+                    '<span>Convergent<span> <span>lim <span><> <span>a_n = -2/5<span>',
+                    '<span>Convergent<span> <span>lim n→∞<span> <span>a_n = -1<span>',
+                    '<span>Convergent<span> <span>lim n→∞<span> <span>a_n = -7<span>',
                     'Divergent หาค่าไม่ได้'
                 ]
             }
@@ -244,7 +233,7 @@
                 // Complex limit formula
                 formulaDiv.innerHTML = `
                     <div class="complex-formula">
-                        <span>a<sub>n</sub> = </span>
+                        <span>lim<sub>n→∞</sub> a<sub>n</sub> = </span>
                         <div class="fraction">
                             <span class="numerator">2<span class="superscript">n</span> + 7<span class="superscript">n</span></span>
                             <span class="denominator">5<span class="superscript">n-1</span> - 7<span class="superscript">n-1</span></span>
@@ -413,15 +402,15 @@
                     break;
                     
                 case 'constant':
-                    const constantY = 350 - (2 * 150);
-                    for (let n = 1; n <= 8; n++) {
-                        const x = xStart + (n - 1) * xStep;
-                        
-                        if (n === 1) pathData += ` ${x},${constantY}`;
-                        else pathData += ` L ${x},${constantY}`;
-                        
-                        addPoint(pointsGroup, x, constantY);
-                    }
+                    const constantY = 50; // y = 50 for value 2.0 (top of scale)
+                    for (let n = 1; n <= 5; n++) {
+                    const x = xStart + (n - 1) * xStep;
+        
+                    if (n === 1) pathData += ` ${x},${constantY}`;
+                    else pathData += ` L ${x},${constantY}`;
+        
+                    addPoint(pointsGroup, x, constantY);
+                }
                     break;
                     
                 case 'alternating':
