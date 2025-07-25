@@ -1,166 +1,187 @@
 <!DOCTYPE html>
 <html lang="th">
-<head>
-  <meta charset="UTF-8" />
-  <title>title</title>
-  <link rel="stylesheet" href="coursestyles.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <link rel="stylesheet" href="coursestyles.css" />
+    <link rel="stylesheet" href="font.css" />
 
-   <ul class="navbar">
-    <!-- เมนูซ้าย -->
-    <div class="navbar-left">
-      <li>
-        <div class="navlogo">
-          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23FFD700'/%3E%3Ccircle cx='35' cy='40' r='5' fill='%23000'/%3E%3Ccircle cx='65' cy='40' r='5' fill='%23000'/%3E%3Cpath d='M 30 60 Q 50 75 70 60' stroke='%23000' stroke-width='3' fill='none'/%3E%3C/svg%3E" alt="Logo" style="width: 100%; height: 100%;">
-        </div>
-      </li>
-      <li class="navbar-title">let you know</li>
-    </div>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="mali-regular">
+    <ul class="navbar">
+      <!-- เมนูซ้าย -->
+      <div class="navbar-left">
+        <li>
+          <div class="navlogo">
+            <img
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23FFD700'/%3E%3Ccircle cx='35' cy='40' r='5' fill='%23000'/%3E%3Ccircle cx='65' cy='40' r='5' fill='%23000'/%3E%3Cpath d='M 30 60 Q 50 75 70 60' stroke='%23000' stroke-width='3' fill='none'/%3E%3C/svg%3E"
+              alt="Logo"
+              style="width: 100%; height: 100%"
+            />
+          </div>
+        </li>
+        <li class="navbar-title">let you know</li>
+      </div>
 
-    <!-- Menu items -->
-    <ul class="navbar-menu">
-            <li>menu1</li>
-            <li>menu2</li>
-            <li>menu3</li>
-            <li>menu4</li>
-            <li>menu5</li>
-            <li>menu6</li>
+      <!-- Menu items -->
+      <ul class="navbar-menu">
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+        <li>menu4</li>
+        <li>menu5</li>
+        <li>menu6</li>
+      </ul>
+
+      <!-- Profile ขวาสุด -->
+      <div class="navbar-right">
+        <li>
+          <div class="navprofile">
+            <img
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23FFD700'/%3E%3Ccircle cx='35' cy='40' r='5' fill='%23000'/%3E%3Ccircle cx='65' cy='40' r='5' fill='%23000'/%3E%3Cpath d='M 30 60 Q 50 75 70 60' stroke='%23000' stroke-width='3' fill='none'/%3E%3C/svg%3E"
+              alt="profile"
+              style="width: 100%; height: 100%"
+            />
+          </div>
+        </li>
+      </div>
     </ul>
 
-    <!-- Profile ขวาสุด -->
-    <div class="navbar-right">
-      <li>
-        <div class="navprofile">
-          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23FFD700'/%3E%3Ccircle cx='35' cy='40' r='5' fill='%23000'/%3E%3Ccircle cx='65' cy='40' r='5' fill='%23000'/%3E%3Cpath d='M 30 60 Q 50 75 70 60' stroke='%23000' stroke-width='3' fill='none'/%3E%3C/svg%3E" alt="profile" style="width: 100%; height: 100%;">
+    <div class="carousel-container">
+      <button class="arrow arrow-left" onclick="prevSlide()">‹</button>
+      <button class="arrow arrow-right" onclick="nextSlide()">›</button>
+
+      <div class="carousel" id="carousel">
+        <!-- Card 1: Engineer -->
+        <div class="card position-2" data-index="0">
+          <div class="card-header">Engineer</div>
+          <div class="card-body">
+            <div class="card-title">Road to be Engineer</div>
+            <div class="card-description">Learn about math and physics</div>
+            <div class="card-actions">
+              <button
+                class="btn btn-primary"
+                onclick="handleAction('enroll', 0)"
+              >
+                join Course
+              </button>
+            </div>
+          </div>
         </div>
-      </li>
-    </div>
-  </ul>
 
-  <div class="carousel-container">
-
-        <button class="arrow arrow-left" onclick="prevSlide()">‹</button>
-        <button class="arrow arrow-right" onclick="nextSlide()">›</button>
-        
-        <div class="carousel" id="carousel">
-            <!-- Card 1: Engineer -->
-            <div class="card position-2" data-index="0">
-                <div class="card-header">
-                    Engineer
-                </div>
-                <div class="card-body">
-                    <div class="card-title">Road to be Engineer</div>
-                    <div class="card-description">
-                        Learn about math and physics
-                    </div>
-                    <div class="card-actions">
-                        <button class="btn btn-primary" onclick="handleAction('enroll', 0)">join Course</button>
-                    </div>
-                </div>
+        <!-- Card 2: Course1 -->
+        <div class="card position-3" data-index="1">
+          <div class="card-header">course1</div>
+          <div class="card-body">
+            <div class="card-title">IDK</div>
+            <div class="card-description">something about that course</div>
+            <div class="card-actions">
+              <button
+                class="btn btn-primary"
+                onclick="handleAction('enroll', 1)"
+              >
+                Join Course
+              </button>
             </div>
-
-            <!-- Card 2: Course1 -->
-            <div class="card position-3" data-index="1">
-                <div class="card-header">
-                    course1
-                </div>
-                <div class="card-body">
-                    <div class="card-title">IDK</div>
-                    <div class="card-description">
-                        something about that course
-                    </div>
-                    <div class="card-actions">
-                        <button class="btn btn-primary" onclick="handleAction('enroll', 1)">Join Course</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 3: Course2 -->
-            <div class="card position-4" data-index="2">
-                <div class="card-header">
-                    course2
-                </div>
-                <div class="card-body">
-                    <div class="card-title">IDK</div>
-                    <div class="card-description">
-                        something about that course
-                    </div>
-                    <div class="card-actions">
-                        <button class="btn btn-primary" onclick="handleAction('start', 2)">Join Course</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 4: Course3 -->
-            <div class="card position-0" data-index="3">
-                <div class="card-header">
-                    course3
-                </div>
-                <div class="card-body">
-                    <div class="card-title">IDK</div>
-                    <div class="card-description">
-                        something about that course
-                    </div>
-                    <div class="card-actions">
-                        <button class="btn btn-primary" onclick="handleAction('register', 3)">Join Course</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 5: Course4 -->
-            <div class="card position-1" data-index="4">
-                <div class="card-header">
-                    course4
-                </div>
-                <div class="card-body">
-                    <div class="card-title">IDK</div>
-                    <div class="card-description">
-                        something about that course
-                    </div>
-                    <div class="card-actions">
-                        <button class="btn btn-primary" onclick="handleAction('begin', 4)">Join Course</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 6: Course5 -->
-            <div class="card position-0" data-index="5">
-                <div class="card-header">
-                    course5
-                </div>
-                <div class="card-body">
-                    <div class="card-title">IDK</div>
-                    <div class="card-description">
-                        something about that course
-                    </div>
-                    <div class="card-actions">
-                        <button class="btn btn-primary" onclick="handleAction('secure', 5)">Join Course</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 7: Course6 -->
-            <div class="card position-0" data-index="6">
-                <div class="card-header">
-                    course6
-                </div>
-                <div class="card-body">
-                    <div class="card-title">IDK</div>
-                    <div class="card-description">
-                        something about that course
-                    </div>
-                    <div class="card-actions">
-                        <button class="btn btn-primary" onclick="handleAction('explore', 6)">Join Course</button>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+
+        <!-- Card 3: Course2 -->
+        <div class="card position-4" data-index="2">
+          <div class="card-header">course2</div>
+          <div class="card-body">
+            <div class="card-title">IDK</div>
+            <div class="card-description">something about that course</div>
+            <div class="card-actions">
+              <button
+                class="btn btn-primary"
+                onclick="handleAction('start', 2)"
+              >
+                Join Course
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Course3 -->
+        <div class="card position-0" data-index="3">
+          <div class="card-header">course3</div>
+          <div class="card-body">
+            <div class="card-title">IDK</div>
+            <div class="card-description">something about that course</div>
+            <div class="card-actions">
+              <button
+                class="btn btn-primary"
+                onclick="handleAction('register', 3)"
+              >
+                Join Course
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5: Course4 -->
+        <div class="card position-1" data-index="4">
+          <div class="card-header">course4</div>
+          <div class="card-body">
+            <div class="card-title">IDK</div>
+            <div class="card-description">something about that course</div>
+            <div class="card-actions">
+              <button
+                class="btn btn-primary"
+                onclick="handleAction('begin', 4)"
+              >
+                Join Course
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6: Course5 -->
+        <div class="card position-0" data-index="5">
+          <div class="card-header">course5</div>
+          <div class="card-body">
+            <div class="card-title">IDK</div>
+            <div class="card-description">something about that course</div>
+            <div class="card-actions">
+              <button
+                class="btn btn-primary"
+                onclick="handleAction('secure', 5)"
+              >
+                Join Course
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 7: Course6 -->
+        <div class="card position-0" data-index="6">
+          <div class="card-header">course6</div>
+          <div class="card-body">
+            <div class="card-title">IDK</div>
+            <div class="card-description">something about that course</div>
+            <div class="card-actions">
+              <button
+                class="btn btn-primary"
+                onclick="handleAction('explore', 6)"
+              >
+                Join Course
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-        <script src="coursejs.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
-</body>
+    <script src="coursejs.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
+  </body>
 </html>

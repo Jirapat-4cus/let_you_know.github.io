@@ -1,234 +1,283 @@
 <!DOCTYPE html>
 <html lang="th">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Learning Path - Course Journey</title>
-    <link rel="stylesheet" href="roadmap.css">
-</head>
-<body>
+    <link rel="stylesheet" href="roadmap.css" />
+    <link rel="stylesheet" href="font.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="mali-regular">
     <!-- Header -->
     <header class="header">
-        <div class="logo-section">
-            <div class="logo">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23FFD700'/%3E%3Ccircle cx='35' cy='40' r='5' fill='%23000'/%3E%3Ccircle cx='65' cy='40' r='5' fill='%23000'/%3E%3Cpath d='M 30 60 Q 50 75 70 60' stroke='%23000' stroke-width='3' fill='none'/%3E%3C/svg%3E" alt="Logo">
-            </div>
-            <div class="site-name">let you know</div>
+      <div class="logo-section">
+        <div class="logo">
+          <img
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23FFD700'/%3E%3Ccircle cx='35' cy='40' r='5' fill='%23000'/%3E%3Ccircle cx='65' cy='40' r='5' fill='%23000'/%3E%3Cpath d='M 30 60 Q 50 75 70 60' stroke='%23000' stroke-width='3' fill='none'/%3E%3C/svg%3E"
+            alt="Logo"
+          />
         </div>
-        <ul class="nav-menu">
-            <li>menu1</li>
-            <li>menu2</li>
-            <li>menu3</li>
-            <li>menu4</li>
-            <li>menu5</li>
-            <li>menu6</li>
-        </ul>
-        <div class="user-avatar">
-            <a href="Profile.html"><img src="DSCF7127.JPG" alt="User"></a>
-        </div>
+        <div class="site-name">let you know</div>
+      </div>
+      <ul class="nav-menu">
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+        <li>menu4</li>
+        <li>menu5</li>
+        <li>menu6</li>
+      </ul>
+      <div class="user-avatar">
+        <a href="Profile.html"><img src="DSCF7127.JPG" alt="User" /></a>
+      </div>
     </header>
 
     <!-- Main Content -->
     <main class="main-container">
-        <!-- Course Header -->
-        <div class="course-header">
-            <h1 class="course-title">
-                Engineer-math
-            </h1>
-            <div class="progress-info">
-                progression <span id="progressPercent">0%</span>
-            </div>
-            <div class="progress-bar-container">
-                <div class="progress-bar-fill" id="progressBar" style="width: 0%"></div>
-            </div>
+      <!-- Course Header -->
+      <div class="course-header">
+        <h1 class="course-title">Engineer-math</h1>
+        <div class="progress-info">
+          progression <span id="progressPercent">0%</span>
+        </div>
+        <div class="progress-bar-container">
+          <div
+            class="progress-bar-fill"
+            id="progressBar"
+            style="width: 0%"
+          ></div>
+        </div>
+      </div>
+
+      <!-- Practice Button -->
+      <div class="practice-section">
+        <button class="practice-btn" onclick="startPractice()">Practice</button>
+      </div>
+
+      <!-- Course Info -->
+      <div class="course-info">
+        <div class="info-item">
+          <div class="info-label">*course name*</div>
+          <div class="info-value" id="courseNameInfo">Engineer-math</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Total Lessons</div>
+          <div class="info-value">8</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Your Score</div>
+          <div class="info-value">0</div>
+        </div>
+      </div>
+
+      <!-- Learning Path -->
+      <div class="learning-path">
+        <!-- Mountain Background -->
+        <div class="mountain-bg"></div>
+
+        <!-- Path SVG -->
+        <svg class="path-svg">
+          <path
+            d="M 80,250 Q 150,200 230,230 T 380,220 Q 450,250 530,230 T 680,210 Q 750,240 830,230 T 950,250 Q 1040,220 1130,240"
+            stroke="white"
+            stroke-width="3"
+            fill="none"
+            stroke-dasharray="10,5"
+            opacity="0.5"
+          />
+        </svg>
+
+        <!-- Checkpoints - positioned to match the path -->
+        <div
+          class="checkpoint current"
+          style="left: 50px; top: 235px"
+          data-lesson="บทที่ 1: พื้นฐานคณิตศาสตร์"
+        >
+          <span>1</span>
+        </div>
+        <div
+          class="checkpoint locked"
+          style="left: 200px; top: 215px"
+          data-lesson="บทที่ 2: ฟังก์ชันและกราฟ"
+        >
+          <span>🔒</span>
+        </div>
+        <div
+          class="checkpoint locked"
+          style="left: 350px; top: 215px"
+          data-lesson="บทที่ 3: ลิมิตและความต่อเนื่อง"
+        >
+          <span>🔒</span>
+        </div>
+        <div
+          class="checkpoint locked"
+          style="left: 500px; top: 215px"
+          data-lesson="บทที่ 4: อนุพันธ์"
+        >
+          <span>🔒</span>
+        </div>
+        <div
+          class="checkpoint locked"
+          style="left: 650px; top: 205px"
+          data-lesson="บทที่ 5: การประยุกต์อนุพันธ์"
+        >
+          <span>🔒</span>
+        </div>
+        <div
+          class="checkpoint locked"
+          style="left: 800px; top: 215px"
+          data-lesson="บทที่ 6: ปริพันธ์"
+        >
+          <span>🔒</span>
+        </div>
+        <div
+          class="checkpoint locked"
+          style="left: 950px; top: 225px"
+          data-lesson="บทที่ 7: สถิติเบื้องต้น"
+        >
+          <span>🔒</span>
+        </div>
+        <div
+          class="checkpoint locked"
+          style="left: 1100px; top: 225px"
+          data-lesson="บทที่ 8: ความน่าจะเป็น"
+        >
+          <span>🔒</span>
         </div>
 
-        <!-- Practice Button -->
-        <div class="practice-section">
-            <button class="practice-btn" onclick="startPractice()">Practice</button>
+        <!-- Character at first checkpoint -->
+        <div class="character" id="character" style="left: 65px; top: 200px">
+          <div class="character-icon"></div>
         </div>
 
-        <!-- Course Info -->
-        <div class="course-info">
-            <div class="info-item">
-                <div class="info-label">*course name*</div>
-                <div class="info-value" id="courseNameInfo">Engineer-math</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label">Total Lessons</div>
-                <div class="info-value">8</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label">Your Score</div>
-                <div class="info-value">0</div>
-            </div>
-        </div>
-
-        <!-- Learning Path -->
-        <div class="learning-path">
-            <!-- Mountain Background -->
-            <div class="mountain-bg"></div>
-
-            <!-- Path SVG -->
-            <svg class="path-svg">
-                <path d="M 80,250 Q 150,200 230,230 T 380,220 Q 450,250 530,230 T 680,210 Q 750,240 830,230 T 950,250 Q 1040,220 1130,240" 
-                      stroke="white" 
-                      stroke-width="3" 
-                      fill="none" 
-                      stroke-dasharray="10,5"
-                      opacity="0.5"/>
-            </svg>
-
-            <!-- Checkpoints - positioned to match the path -->
-            <div class="checkpoint current" style="left: 50px; top: 235px;" data-lesson="บทที่ 1: พื้นฐานคณิตศาสตร์">
-                <span>1</span>
-            </div>
-            <div class="checkpoint locked" style="left: 200px; top: 215px;" data-lesson="บทที่ 2: ฟังก์ชันและกราฟ">
-                <span>🔒</span>
-            </div>
-            <div class="checkpoint locked" style="left: 350px; top: 215px;" data-lesson="บทที่ 3: ลิมิตและความต่อเนื่อง">
-                <span>🔒</span>
-            </div>
-            <div class="checkpoint locked" style="left: 500px; top: 215px;" data-lesson="บทที่ 4: อนุพันธ์">
-                <span>🔒</span>
-            </div>
-            <div class="checkpoint locked" style="left: 650px; top: 205px;" data-lesson="บทที่ 5: การประยุกต์อนุพันธ์">
-                <span>🔒</span>
-            </div>
-            <div class="checkpoint locked" style="left: 800px; top: 215px;" data-lesson="บทที่ 6: ปริพันธ์">
-                <span>🔒</span>
-            </div>
-            <div class="checkpoint locked" style="left: 950px; top: 225px;" data-lesson="บทที่ 7: สถิติเบื้องต้น">
-                <span>🔒</span>
-            </div>
-            <div class="checkpoint locked" style="left: 1100px; top: 225px;" data-lesson="บทที่ 8: ความน่าจะเป็น">
-                <span>🔒</span>
-            </div>
-
-            <!-- Character at first checkpoint -->
-            <div class="character" id="character" style="left: 65px; top: 200px;">
-                <div class="character-icon"></div>
-            </div>
-
-            <!-- Lesson Tooltips -->
-            <div class="lesson-tooltip" id="tooltip"></div>
-        </div>
+        <!-- Lesson Tooltips -->
+        <div class="lesson-tooltip" id="tooltip"></div>
+      </div>
     </main>
 
     <script>
-        // Course name info
-        const courseNameInfo = document.getElementById('courseNameInfo');
+      // Course name info
+      const courseNameInfo = document.getElementById("courseNameInfo");
 
-        // Tooltip and click functionality
-        const tooltip = document.getElementById('tooltip');
-        const checkpoints = document.querySelectorAll('.checkpoint');
-        const character = document.getElementById('character');
-        let lastClickTime = 0;
-        let lastClickedCheckpoint = null;
+      // Tooltip and click functionality
+      const tooltip = document.getElementById("tooltip");
+      const checkpoints = document.querySelectorAll(".checkpoint");
+      const character = document.getElementById("character");
+      let lastClickTime = 0;
+      let lastClickedCheckpoint = null;
 
-        // Function to move character to checkpoint
-        function moveCharacterTo(checkpoint) {
-            const checkpointLeft = parseInt(checkpoint.style.left);
-            const checkpointTop = parseInt(checkpoint.style.top);
-            
-            character.style.left = (checkpointLeft + 15) + 'px';
-            character.style.top = (checkpointTop - 35) + 'px';
-        }
+      // Function to move character to checkpoint
+      function moveCharacterTo(checkpoint) {
+        const checkpointLeft = parseInt(checkpoint.style.left);
+        const checkpointTop = parseInt(checkpoint.style.top);
 
-        // Function to update highlight
-        function updateHighlight(clickedCheckpoint) {
-            // Remove current class from all checkpoints
-            checkpoints.forEach(cp => {
-                cp.classList.remove('current');
-            });
-            
-            // Add current class to clicked checkpoint
-            clickedCheckpoint.classList.add('current');
-        }
+        character.style.left = checkpointLeft + 15 + "px";
+        character.style.top = checkpointTop - 35 + "px";
+      }
 
-        checkpoints.forEach((checkpoint, index) => {
-            checkpoint.addEventListener('mouseenter', (e) => {
-                const lesson = e.target.getAttribute('data-lesson');
-                tooltip.textContent = lesson;
-                tooltip.classList.add('show');
-                
-                const rect = e.target.getBoundingClientRect();
-                const parentRect = e.target.parentElement.getBoundingClientRect();
-                tooltip.style.left = (rect.left - parentRect.left + 30) + 'px';
-                tooltip.style.top = (rect.top - parentRect.top - 10) + 'px';
-            });
-
-            checkpoint.addEventListener('mouseleave', () => {
-                tooltip.classList.remove('show');
-            });
-
-            checkpoint.addEventListener('click', (e) => {
-                const currentTime = new Date().getTime();
-                const isDoubleClick = (currentTime - lastClickTime) < 300 && lastClickedCheckpoint === checkpoint;
-                
-                if (!e.target.classList.contains('locked')) {
-                    if (isDoubleClick) {
-                        // Double click - navigate to lesson
-                        const lessonId = `lesson${index + 1}`;
-                        window.location.href = `quiz1.html#${lessonId}`;
-                        // In real app, you might want:
-                        // window.location.href = `/lessons/${lessonId}`;
-                    } else {
-                        // Single click - move character and highlight
-                        moveCharacterTo(checkpoint);
-                        updateHighlight(checkpoint);
-                        
-                        // Don't update progress bar when clicking
-                        // Progress should only increase when completing lessons
-                    }
-                } else {
-                    // Locked checkpoint
-                    alert('บทเรียนนี้ยังไม่ปลดล็อค กรุณาเรียนบทก่อนหน้าให้เสร็จก่อน');
-                }
-                
-                lastClickTime = currentTime;
-                lastClickedCheckpoint = checkpoint;
-            });
+      // Function to update highlight
+      function updateHighlight(clickedCheckpoint) {
+        // Remove current class from all checkpoints
+        checkpoints.forEach((cp) => {
+          cp.classList.remove("current");
         });
 
-        // Practice button
-        function startPractice() {
-            // Navigate to practice page for lesson 1
-            window.location.href = '#lesson1-practice';
-            // alert('เริ่มทำแบบฝึกหัดบทที่ 1: พื้นฐานคณิตศาสตร์');
-        }
+        // Add current class to clicked checkpoint
+        clickedCheckpoint.classList.add("current");
+      }
 
-        // Progress animation
-        let progress = 0;
-        const progressPercent = document.getElementById('progressPercent');
-        const progressBar = document.getElementById('progressBar');
+      checkpoints.forEach((checkpoint, index) => {
+        checkpoint.addEventListener("mouseenter", (e) => {
+          const lesson = e.target.getAttribute("data-lesson");
+          tooltip.textContent = lesson;
+          tooltip.classList.add("show");
 
-        // Update progress when completing lessons
-        function updateProgress(newProgress) {
-            progress = newProgress;
-            progressPercent.textContent = progress + '%';
-            progressBar.style.width = progress + '%';
-            
-            // Add animation
-            progressPercent.style.transition = 'all 1s ease';
-            progressBar.style.transition = 'width 1s ease';
-            
-            if (progress > 0) {
-                progressPercent.style.color = '#4CAF50';
+          const rect = e.target.getBoundingClientRect();
+          const parentRect = e.target.parentElement.getBoundingClientRect();
+          tooltip.style.left = rect.left - parentRect.left + 30 + "px";
+          tooltip.style.top = rect.top - parentRect.top - 10 + "px";
+        });
+
+        checkpoint.addEventListener("mouseleave", () => {
+          tooltip.classList.remove("show");
+        });
+
+        checkpoint.addEventListener("click", (e) => {
+          const currentTime = new Date().getTime();
+          const isDoubleClick =
+            currentTime - lastClickTime < 300 &&
+            lastClickedCheckpoint === checkpoint;
+
+          if (!e.target.classList.contains("locked")) {
+            if (isDoubleClick) {
+              // Double click - navigate to lesson
+              const lessonId = `lesson${index + 1}`;
+              window.location.href = `quiz1.html#${lessonId}`;
+              // In real app, you might want:
+              // window.location.href = `/lessons/${lessonId}`;
+            } else {
+              // Single click - move character and highlight
+              moveCharacterTo(checkpoint);
+              updateHighlight(checkpoint);
+
+              // Don't update progress bar when clicking
+              // Progress should only increase when completing lessons
             }
-        }
+          } else {
+            // Locked checkpoint
+            alert("บทเรียนนี้ยังไม่ปลดล็อค กรุณาเรียนบทก่อนหน้าให้เสร็จก่อน");
+          }
 
-        // Show welcome message for first time user
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                const firstCheckpoint = checkpoints[0];
-                firstCheckpoint.classList.add('pulse');
-                
-                // Optional: Show a welcome tooltip
-                const welcomeTooltip = document.createElement('div');
-                welcomeTooltip.className = 'welcome-tooltip';
-                welcomeTooltip.innerHTML = 'คลิกที่นี่เพื่อเริ่มบทเรียนแรก! 👆';
-                welcomeTooltip.style.cssText = `
+          lastClickTime = currentTime;
+          lastClickedCheckpoint = checkpoint;
+        });
+      });
+
+      // Practice button
+      function startPractice() {
+        // Navigate to practice page for lesson 1
+        window.location.href = "#lesson1-practice";
+        // alert('เริ่มทำแบบฝึกหัดบทที่ 1: พื้นฐานคณิตศาสตร์');
+      }
+
+      // Progress animation
+      let progress = 0;
+      const progressPercent = document.getElementById("progressPercent");
+      const progressBar = document.getElementById("progressBar");
+
+      // Update progress when completing lessons
+      function updateProgress(newProgress) {
+        progress = newProgress;
+        progressPercent.textContent = progress + "%";
+        progressBar.style.width = progress + "%";
+
+        // Add animation
+        progressPercent.style.transition = "all 1s ease";
+        progressBar.style.transition = "width 1s ease";
+
+        if (progress > 0) {
+          progressPercent.style.color = "#4CAF50";
+        }
+      }
+
+      // Show welcome message for first time user
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          const firstCheckpoint = checkpoints[0];
+          firstCheckpoint.classList.add("pulse");
+
+          // Optional: Show a welcome tooltip
+          const welcomeTooltip = document.createElement("div");
+          welcomeTooltip.className = "welcome-tooltip";
+          welcomeTooltip.innerHTML = "คลิกที่นี่เพื่อเริ่มบทเรียนแรก! 👆";
+          welcomeTooltip.style.cssText = `
                     position: absolute;
                     left: 30px;
                     top: 280px;
@@ -240,19 +289,23 @@
                     animation: bounce 2s infinite;
                     z-index: 100;
                 `;
-                
-                document.querySelector('.learning-path').appendChild(welcomeTooltip);
-                
-                // Remove welcome tooltip after first click
-                firstCheckpoint.addEventListener('click', () => {
-                    welcomeTooltip.remove();
-                }, { once: true });
-            }, 1000);
-        });
 
-        // Add bounce animation style
-        const style = document.createElement('style');
-        style.textContent = `
+          document.querySelector(".learning-path").appendChild(welcomeTooltip);
+
+          // Remove welcome tooltip after first click
+          firstCheckpoint.addEventListener(
+            "click",
+            () => {
+              welcomeTooltip.remove();
+            },
+            { once: true }
+          );
+        }, 1000);
+      });
+
+      // Add bounce animation style
+      const style = document.createElement("style");
+      style.textContent = `
             @keyframes bounce {
                 0%, 20%, 50%, 80%, 100% {
                     transform: translateY(0);
@@ -269,7 +322,7 @@
                 animation: pulse 2s infinite;    
             }
         `;
-        document.head.appendChild(style);
+      document.head.appendChild(style);
     </script>
-</body>
+  </body>
 </html>
