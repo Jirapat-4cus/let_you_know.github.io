@@ -1,170 +1,243 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f2f5;
-    margin: 0;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
+  font-family: Arial, sans-serif;
+  background-color: #3a393a;
+  margin: 0;
+  padding: 0;
 }
+
 .container {
-    background-color: #ffffff;
-    width: 100%;
-    max-width: 1200px;
-    border: 1px solid #dcdcdc;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
+
 .header {
-    background-color: #4a4a4a;
-    color: white;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  background-color: #4a4a4a;
+  color: white;
+  padding: 10px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.header .logo-container {
-    display: flex;
-    align-items: center;
+
+.logo-container {
+  display: flex;
+  align-items: center;
 }
-.header .logo {
-    width: 30px;
-    height: 30px;
-    background-color: #c0e0ff;
-    border-radius: 5px;
-    margin-right: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 10px;
-    font-weight: bold;
+
+.logo {
+  width: 30px;
+  height: 30px;
+  background-color: #c0e0ff;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: bold;
+  margin-right: 10px;
 }
-.header .menu-icon {
-    font-size: 24px;
-    margin-right: 20px;
+
+.menu-icon {
+  display: none; /* ซ่อนไว้ เพราะคุณมี nav-menu แล้ว */
 }
-.header .nav-menu {
-    display: flex;
-    gap: 20px;
+
+.nav-menu {
+  display: flex;
+  gap: 20px;
 }
-.header .nav-menu a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
 }
-.header .profile-icon {
-    width: 30px;
-    height: 30px;
-    background-color: #c0e0ff;
-    border-radius: 50%;
+
+.profile-icon {
+  width: 30px;
+  height: 30px;
+  background-color: #c0e0ff;
+  border-radius: 50%;
 }
 
 .profile-section {
-    padding: 40px;
-    display: flex;
-    align-items: center;
-    gap: 40px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 40px 60px;
+  color: white;
+  flex-wrap: wrap;
 }
+
 .profile-picture {
-    width: 150px;
-    height: 150px;
+    width: 220px;
+    height: 220px;
     border-radius: 50%;
     background-color: #d9f2ff;
-    border: 5px solid white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
 }
+
 .profile-picture img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
+
 .profile-details {
-    flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.profile-details .level {
-    background-color: #333;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    display: inline-block;
+
+.level {
+  background-color: white;
+    color: black;
+    font-size: 20px;
+    padding: 6px 14px;
+    border-radius: 6px;
     font-weight: bold;
+    display: inline-block;
     margin-bottom: 10px;
 }
-.profile-details .name {
-    font-size: 36px;
+
+.name {
+    font-size: 44px;
     font-weight: bold;
     margin: 0;
 }
-.profile-details .streak {
-    color: #666;
-    font-size: 18px;
+
+.streak {
+    font-size: 22px;
+    color: #ccc;
     margin-top: 5px;
 }
 
 .main-content {
-    display: flex;
-    padding: 0 40px 40px 40px;
-    gap: 40px;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  padding: 0 60px 60px 60px;
+  gap: 40px;
+  color: white;
 }
+
 .content-box {
-    text-align: center;
+  text-align: center;
+  flex: 1 1 30%;
+  max-width: 350px;
 }
+
 .content-box h2 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
+  font-size: 22px;
+  margin-bottom: 15px;
 }
+
 .courses .course-item {
-    background-color: #e0e0e0;
-    padding: 20px 40px;
-    border-radius: 10px;
-    font-size: 20px;
-    color: #333;
-    font-weight: bold;
+  background-color: #5a5a5a;
+  padding: 15px 30px;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  display: inline-block;
 }
+
+.divider {
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+  align-self: stretch;
+}
+
 .achievement-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  justify-items: center;
 }
+
 .achievement-item {
-    width: 80px;
-    height: 80px;
-    background-color: #f0f0f0;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .achievement-item img {
-    width: 60px;
-    height: 60px;
+  width: 60px;
+  height: 60px;
 }
+
 .achievement-item.more {
-    background-color: #666;
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
+  background-color: #666;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .rank-display {
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rank-display img {
+  width: 100px;
+  height: auto;
+}
+
+.rank-title {
+  font-weight: bold;
+  font-size: 16px;
+  color: white;
+  margin-top: 8px;
+}
+
+/* Responsive for tablets */
+@media (max-width: 992px) {
+  .main-content {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .divider {
+    display: none;
+  }
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-menu {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: 10px;
+  }
+
+  .profile-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .main-content {
     flex-direction: column;
     align-items: center;
-}
-.rank-display img {
-    width: 150px;
-    height: auto;
-}
-.rank-display .rank-title {
-    font-weight: bold;
-    margin-top: 10px;
-    color: #333;
-}
-.divider {
-    width: 1px;
-    background-color: #ccc;
-    align-self: stretch;
+    padding: 0 20px 40px 20px;
+  }
+
+  .content-box {
+    max-width: 90%;
+  }
 }
